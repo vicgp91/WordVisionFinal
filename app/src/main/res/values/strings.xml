@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Prácticas Resilientes</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_show_primeros_auxilios">showPrimerosAuxilios</string>
+    <string name="title_activity_ver_primeros_auxilios">Resilencia</string>
+
+    <string name="mensaje">Comunidades preparadas salvan vidas de que valen décadas de desarrollo si en un instante un evento
+        adverso ya sea natural, socio-natural o  social puede cambiar su vida...posiblemente para siempre.
+    </string>
+
+    <string name="contenido">
+        Por ejemplo, si encontramos una persona inconsciente y con sospecha de haber recibido una descarga eléctrica o electrocución, la persona que va a atenderla debe estar segura que no le va a ocurrir lo mismo. Debe revisar que la zona sea segura. Si hay alguien más en el lugar del accidente, debe darle instrucciones para solicitar los servicios de emergencia, dando los siguientes datos: 1. Proporcione número telefónico desde el cual se está llamando, si se conoce. 2. Proporcione ubicación del lugar donde se encuentra la víctima 3. Describir el tipo de urgencia que está experimentando la víctima. 4. Describa el tipo de ayuda que se está proporcionando. 5. De su nombre 6. Diga qué otro tipo de ayuda necesita: Bomberos, policía, etc.
+
+A continuación se hace la valoración del paciente.
+
+1. Evaluación primaria del paciente.
+
+2. Valoración de la consciencia:
+
+Se preguntará a la víctima cómo está, cómo se encuentra. Si contesta, es símbolo inequívoco de que respira y tiene pulso. En caso que no conteste, pellizcar levemente en los hombros; si reacciona, seguir la conducta anterior; en caso de muerte, llamar a los servicios de emergencias cuanto antes.
+
+Una manera rápida de valorar la conciencia es determinar si responde o no
+
+    Alerta. Está despierto, habla.
+    Verbal. Responde al llamado, cuando alzamos la voz y lo llamamos ¿Cómo esta?
+    Dolor. Responde al dolor, le pellizcamos y reacciona con gestos o gruñidos.
+    Inconsciente. No responde.
+
+
+
+
+
+    </string>
+
+</resources>
