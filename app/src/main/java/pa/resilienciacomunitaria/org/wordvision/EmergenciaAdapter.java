@@ -27,6 +27,7 @@ public class EmergenciaAdapter extends ArrayAdapter<PrimerosAuxilios> {
 
         View item = LayoutInflater.from(context).inflate(
                 R.layout.items_auxilio, null);
+				
         ImageView imagen = (ImageView) item.findViewById(R.id.imgAux);
         imagen.setImageResource(datos.get(position).getImagen());
 
