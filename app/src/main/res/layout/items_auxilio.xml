@@ -22,7 +22,7 @@
         android:layout_alignParentTop="true"
         android:paddingLeft="16dp"
         android:layout_marginTop="20dp"
-        android:textSize="18sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/imgAux"
         android:text="TextView" />

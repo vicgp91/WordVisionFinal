@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/listaNumerosAux"
         android:layout_alignParentLeft="true"
+        android:divider="#7F7F7F"
+        android:dividerHeight="2dp"
         android:layout_below="@+id/tvItemFieldAux"
         android:layout_marginBottom="15dp"
         android:layout_weight="4"
