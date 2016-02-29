@@ -4,6 +4,7 @@ package pa.resilienciacomunitaria.org.wordvision;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,8 @@ public class ThreeFragment extends Fragment {
         titulo = (TextView) rootView.findViewById(R.id.titulo);
         contenido = (TextView) rootView.findViewById(R.id.contenido);
         imagen = (ImageView) rootView.findViewById(R.id.logo);
+
+        rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         //irUrl = (Button) rootView.findViewById(R.id.url);
 

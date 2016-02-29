@@ -2,6 +2,7 @@ package pa.resilienciacomunitaria.org.wordvision;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -38,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvNombre, tvNumCelda;
 
 
-    private int[] tabIcons = {
-            R.drawable.telefono,
-            R.drawable.emergencia,
-            R.drawable.compartir
-    };
+   /* private String[] tabIcons = {
+            "Teléfonos",
+            "Primeros Auxilios",
+            "Word Vision"
+    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,22 +60,31 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        setupTabIcons();
-    }
-
-    private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+      //  setupTabIcons();
     }
 
     private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(new participa_fragment(), "Participa");
+        adapter.addFrag(new TwoFragment(), "Guías");
+        adapter.addFrag(new OneFragment(), "Teléfonos");
+        adapter.addFrag(new ThreeFragment(), "Word Vision");
+        viewPager.setAdapter(adapter);
+    }
+
+   /* private void setupTabIcons() {
+        tabLayout.getTabAt(0).setText(tabIcons[0]);
+        tabLayout.getTabAt(1).setText(tabIcons[1]);
+        tabLayout.getTabAt(2).setText(tabIcons[2]);
+    }*/
+
+   /* private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), "");
         adapter.addFragment(new TwoFragment(), "");
         adapter.addFragment(new ThreeFragment(), "");
         viewPager.setAdapter(adapter);
-    }
+    }*/
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
@@ -94,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        public void addFragment(Fragment fragment, String title) {
+        public void addFrag(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }

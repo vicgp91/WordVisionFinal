@@ -2,6 +2,7 @@ package pa.resilienciacomunitaria.org.wordvision;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,19 +12,24 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class TwoFragment extends Fragment {
 
-    private ArrayList<PrimerosAuxilios> emergencia;
+    private ArrayList<PrimerosAuxilios> primerosAuxilios;
     private ListView listEmergencias;
     private EmergenciaAdapter adapter;
     private TextView tvNombreaux, tvTelefonoaux;
+    private ArrayList<AtencionesEmergencias> emergenciasArrayList;
     View rootView;
 
 
     public TwoFragment() {
+
     }
 
 
@@ -32,11 +38,13 @@ public class TwoFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_two, container, false);
 
-        emergencia = new ArrayList<PrimerosAuxilios>();
+        primerosAuxilios = new ArrayList<PrimerosAuxilios>();
         rellenarArrayList();
         tvNombreaux = (TextView) rootView.findViewById(R.id.tvTituloAux);
 
-        adapter = new EmergenciaAdapter(this.getContext(), emergencia);
+        rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
+        adapter = new EmergenciaAdapter(this.getContext(), primerosAuxilios);
 
         listEmergencias = (ListView) rootView.findViewById(R.id.listaNumerosAux);
         listEmergencias.setAdapter(adapter);
@@ -48,10 +56,14 @@ public class TwoFragment extends Fragment {
 
                 // dialog(contactos.get(position).getTelefono());
                 // MostrarNota(position);
-                Intent i = new Intent(rootView.getContext(), VerPrimerosAuxilios.class );
-                i.putExtra("titulo", emergencia.get(position).getNombre());
-                i.putExtra("imagen", emergencia.get(position).getImagen());
-                i.putExtra("contenido", emergencia.get(position).getDescripcion());
+                Intent i = new Intent(rootView.getContext(), VerInfoPrimerosAuxilios.class );
+                i.putExtra("titulo", primerosAuxilios.get(position).getNombre());
+                i.putExtra("imagen", primerosAuxilios.get(position).getImagen());
+                i.putExtra("contenido", primerosAuxilios.get(position).getDescripcion());
+                i.putExtra("atencionesEmergencias", new Gson().toJson(primerosAuxilios.get(position).getEmergenciasArrayList() ));
+
+
+                //i.putExtra("atencionesEmergencias",primerosAuxilios.get(position).getEmergenciasArrayList() );
                 startActivity(i);
             }
         });
@@ -61,17 +73,58 @@ public class TwoFragment extends Fragment {
     }
 
     private void rellenarArrayList() {
-        String contenido="La resiliencia es la capacidad de los seres vivos para sobreponerse a períodos de dolor emocional y situaciones adversas. " +
-                "\n Cuando un sujeto o grupo es capaz de hacerlo, se dice que tiene una resiliencia adecuada, y puede sobreponerse a contratiempos o incluso resultar fortalecido por estos. " +
-                "\n Actualmente, la resiliencia se aborda desde la psicología positiva, la cual se centra en las capacidades, valores y atributos positivos de los seres humanos, y no en sus debilidades y patologías, como lo hace la psicología tradicional.";
-        emergencia.add(new PrimerosAuxilios(contenido, "Prácticas Resilientes ", R.drawable.primerosauxilios));
-        emergencia.add(new PrimerosAuxilios(contenido, "Sistema de Comando de Incidente", R.drawable.primerosauxilios));
-        emergencia.add(new PrimerosAuxilios(contenido, "Primeros Auxilios Psicológicos", R.drawable.primerosauxilios));
-        emergencia.add(new PrimerosAuxilios(contenido, "Camillaje ", R.drawable.primerosauxilios));
-        emergencia.add(new PrimerosAuxilios(contenido, "Primeros auxilios psicologicos", R.drawable.primerosauxilios));
-        emergencia.add(new PrimerosAuxilios(contenido, "Seguridad Acuática", R.drawable.primerosauxilios));
-        emergencia.add(new PrimerosAuxilios(contenido, "Medicina en Emergencia", R.drawable.primerosauxilios));
 
+        String contenidoFractura1="Es la ruptura parcial o total de un hueso lesiones causadas por factores externos o internos como enfermedades propias de los huesos." +
+                "\nAgentes externos: Son provocados por trauma, fuerza desproporcionada, movimiento desmedido que ocasionan esgunces, fractura y luxaciones." +
+                "\n" +
+                "Agentes Internos: Enfermedades que afectan el sistema óseo, eje. Osteoporosis, leucemia y cáncer de huesos";
+        String contenidoFractura2="\nSignos y Sintomas de Fracturas: " +
+                "\nSignos:" +
+                "\n-Deformidad. \n-Inflamación. \n-Incapacidad de movimiento. \n-Aumento o acortamiento del miembro. \n-Área lesionada  enturmecida y Fría. \n-La piel tiene un color Azul. ";
+
+        ArrayList<AtencionesEmergencias>  fractura = new ArrayList<AtencionesEmergencias>();
+        fractura.add(new AtencionesEmergencias(null, contenidoFractura1, "FRACTURAS"));
+        fractura.add(new AtencionesEmergencias(null, contenidoFractura2, null));
+
+        String hemorragea1="Es la pérdida abundante de sangre al romperse un vaso sanguineo" +
+                "\nTIPOS DE HEMORRAGIAS: " +
+                "\n1. Hemorragia Arterial: Sangre de color rojo que sale de forma intermitente coincidiendo con los latidos del corazón." +
+                "\n2. Hemorragias Venosas: Sangre de color oscuro y que sale de forma continua." +
+                "\n3. Hemorragia Capilar: Sangrado de color  rojo que sale de forma lenta." +
+                "\n" +
+                "\nClasificación de las Hemorragias: " +
+                "\n1. Hemorragia Externa: Se acompaña de una herida en la piel y se observa salida de sangre hacia afuera." +
+                "\n2. Hemorragia Interna: El sangrado es interno. Este sangrado puede salir por los orificios naturales del cuerpo, convirtiendose en hemorragia  exteriorizada.";
+        String hemorragia2="Haga  presión directa: Use guantes y ejerza presión sobre la herida." +
+                "\nElevación: Elevar las extremidades afectadas (piernas o brazos), para aminorar la salida de sangre al sitio de la herida. Si no existen fracturas u objetos ensartados  se elevan las extremidades afectadas a un nivel más alto que el del corazón" +
+                "\nPresión Indirecta: Usando la yema de los dedos, la palma de la mano, se apretará en el sitio afectado donde podamos prensar la arteria por donde sale la sangre contra el hueso, a fin de evitar el paso de la sangre.";
+
+        ArrayList<AtencionesEmergencias>  hemorrageas = new ArrayList<AtencionesEmergencias>();
+        hemorrageas.add(new AtencionesEmergencias(null, hemorragea1, "HEMORRAGIAS"));
+        hemorrageas.add(new AtencionesEmergencias(null, hemorragia2, "Primeros Auxilios para hemorragias"));
+
+        String herida1="Es la separación de los tejidos de la piel, que puede dejar al descubierto otras partes del cuerpo como los huesos y otros órganos del ser humano que se encuentrann internamente.";
+        String herida2="\n1. Cortantes: Bordes rectilíneos (cuchillo, gillette, navaja)." +
+                "\n2. Lacerantes: Bordes irregulares (latón, sierra, vidrio)." +
+                "\n3. Punzantes: Orificio a veces con salida (punzón, clavos, agujas)" +
+                "\n3. Contusas: Golpes fuertes (pedradas, martillazos)." +
+                "\n4. Corto Punzante: Bordes rectilíneos  y orificio (verruguilla, navaja)." +
+                "\n5. Avulsiva: Desgarre o pérdida de un miembro o parte del cuerpo.";
+
+        ArrayList<AtencionesEmergencias>  heridas = new ArrayList<AtencionesEmergencias>();
+        heridas.add(new AtencionesEmergencias(null, herida1, "HERIDAS"));
+        heridas.add(new AtencionesEmergencias(null, herida2, "LOS ELEMENTOS QUE PUEDEN PRODUCIR HERIDAS SON: "));
+
+        ArrayList<AtencionesEmergencias>  inmobilizacion = new ArrayList<AtencionesEmergencias>();
+        inmobilizacion.add(new AtencionesEmergencias(null, null, null));
+        inmobilizacion.add(new AtencionesEmergencias(null, null, null));
+        inmobilizacion.add(new AtencionesEmergencias(null, null, null));
+
+
+        primerosAuxilios.add(new PrimerosAuxilios(null,"Fracturas", R.drawable.fracturalist, fractura));
+        primerosAuxilios.add(new PrimerosAuxilios(null, "Hemorrageas", R.drawable.hemorragialist, hemorrageas));
+        primerosAuxilios.add(new PrimerosAuxilios(null, "Heridas", R.drawable.primerosauxilios, heridas));
+        primerosAuxilios.add(new PrimerosAuxilios(null, "Inmobilización ", R.drawable.primerosauxilios, inmobilizacion));
     }
 
 

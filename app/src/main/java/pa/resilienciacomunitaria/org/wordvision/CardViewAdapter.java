@@ -1,39 +1,71 @@
 package pa.resilienciacomunitaria.org.wordvision;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
+import java.util.List;
 
-public class CardViewAdapter extends ArrayAdapter<PrimerosAuxilios> {
-    private Context context;
-    private ArrayList<PrimerosAuxilios> datos;
+public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHolder> {
 
 
-    public CardViewAdapter(Context context, ArrayList<PrimerosAuxilios> datos) {
-        super(context, R.layout.items_auxilio, datos);
-        this.context = context;
-        this.datos = datos;
+    private ArrayList<AtencionesEmergencias> items;
+    private String titulo;
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        // each data item is just a string in this case
+
+        public ImageView imagen;
+        public TextView nombre;
+        public TextView visitas;
+        private Toolbar toolbarCard;
+
+
+        public ViewHolder(View  v) {
+            super(v);
+           // imagen = (ImageView) v.findViewById(R.id.imagen);
+            nombre = (TextView) v.findViewById(R.id.nombre);
+             toolbarCard = (Toolbar) v.findViewById(R.id.toolbarCard);
+           // visitas = (TextView) v.findViewById(R.id.visitas);
+        }
+    }
+
+
+
+    public CardViewAdapter(ArrayList<AtencionesEmergencias> items, String titulo) {
+        this.items = items;
+        this.titulo=titulo;
+    }
+
+    @Override
+    public int getItemCount() {
+        return items.size();
     }
 
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View item = LayoutInflater.from(context).inflate(
-                R.layout.items_auxilio, null);
-				
-        ImageView imagen = (ImageView) item.findViewById(R.id.imgAux);
-        imagen.setImageResource(datos.get(position).getImagen());
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.items_cardview, parent, false);
 
-        TextView nombre = (TextView) item.findViewById(R.id.tvTituloAux);
-        nombre.setText(datos.get(position).getNombre());
-        return item;
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
+
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        //holder.imagen.setImageResource(items.get(position).getImagen());
+        holder.nombre.setText(items.get(position).getDescripcion());
+        holder.toolbarCard.setTitle(items.get(position).getTitulo());
     }
 
 

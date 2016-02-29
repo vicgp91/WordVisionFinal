@@ -1,24 +1,30 @@
 package pa.resilienciacomunitaria.org.wordvision;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimerosAuxilios {
 
 
-    private int imagen;
+    private Integer imagen;
     private String descripcion;
     private String nombre;
+    private ArrayList<AtencionesEmergencias> emergenciasArrayList = new ArrayList<AtencionesEmergencias>();
 
-
-    PrimerosAuxilios(String descripcion, String nombre, int imagen){
-        this.imagen=imagen;
+    PrimerosAuxilios(String descripcion, String nombre, Integer imagen, ArrayList<AtencionesEmergencias> emergenciasArrayList){
         this.descripcion=descripcion;
         this.nombre=nombre;
+        this.imagen=imagen;
+        this.emergenciasArrayList=emergenciasArrayList;
     }
 
-    public int getImagen() {
+
+
+    public Integer getImagen() {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(Integer imagen) {
         this.imagen = imagen;
     }
 
@@ -36,5 +42,13 @@ public class PrimerosAuxilios {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public ArrayList<AtencionesEmergencias> getEmergenciasArrayList() {
+        return emergenciasArrayList;
+    }
+
+    public void setEmergenciasArrayList(ArrayList<AtencionesEmergencias> emergenciasArrayList) {
+        this.emergenciasArrayList = emergenciasArrayList;
     }
 }

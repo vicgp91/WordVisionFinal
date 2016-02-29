@@ -4,6 +4,7 @@ package pa.resilienciacomunitaria.org.wordvision;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -41,6 +42,7 @@ public class OneFragment extends Fragment {
                              Bundle savedInstanceState) {
         //return inflater.inflate(R.layout.fragment_one, container, false);
         rootView = inflater.inflate(R.layout.fragment_one, container, false);
+        rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         contactos = new ArrayList<ContactoEmergencias>();
         rellenarArrayList();
