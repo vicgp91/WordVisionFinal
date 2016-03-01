@@ -2,6 +2,7 @@ package pa.resilienciacomunitaria.org.wordvision;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +36,7 @@ import java.util.List;
 public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
     private TextView titulo, contenido;
-    ImageView imagen;
+    private ImageView imagen;
     private ListView lvImagenes;
     private ViewGroup linearLayoutDetails;
     private CardViewAdapter cardViewAdapter;
@@ -62,17 +63,11 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.items_cardview);
-
         //setContentView(R.layout.activity_ver_info_primeros_auxilios
-
-        // toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ArrayList<AtencionesEmergencias> itemsPrimerosAuxilios = new ArrayList<AtencionesEmergencias>();
-
-
         // Obtener el Recycler
         // recycler = (RecyclerView) findViewById(R.id.reciclador);
         //recycler.setHasFixedSize(true);
@@ -100,10 +95,13 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         toolbarCard = (Toolbar) findViewById(R.id.toolbarCard);
         siguiente = (TextView) findViewById(R.id.siguiente);
         anterior = (TextView) findViewById(R.id.anterior);
+        imagen=(ImageView)findViewById(R.id.imagen);
 
         nombre.setText(listEmergencia.get(0).getDescripcion());
         toolbarCard.setTitle(listEmergencia.get(0).getTitulo());
+        imagen.setImageResource(listEmergencia.get(0).getImagen());
         toolbarCard.setSubtitle("Parte 1/" + String.valueOf(listEmergencia.size()));
+        anterior.setVisibility(View.INVISIBLE);
         posicionPagina = 1;
 
     }
@@ -156,12 +154,17 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         final   RadioButton rd2 = (RadioButton) dialog.findViewById(R.id.rd_2);
         final   RadioButton rd3 = (RadioButton) dialog.findViewById(R.id.rd_3);
 
-        posicionPagina = posicionPagina + 1;
 
+        posicionPagina = posicionPagina + 1;
         if (posicionPagina <= listEmergencia.size()) {
+
 
             if (posicionPagina < listEmergencia.size()) {
                 siguiente.setText("Siguiente");
+            }
+
+            if (posicionPagina>1){
+                anterior.setVisibility(v.VISIBLE);
             }
 
             if (posicionPagina == listEmergencia.size()) {
@@ -169,11 +172,13 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
             }
 
             nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
+            imagen.setImageResource(listEmergencia.get(posicionPagina - 1).getImagen());
             toolbarCard.setTitle(listEmergencia.get(posicionPagina - 1).getTitulo());
             toolbarCard.setSubtitle("Parte " + String.valueOf(posicionPagina) + "/" + String.valueOf(listEmergencia.size()));
 
         }
         if(siguiente.getText().equals("Quiz!") && posicionPagina > listEmergencia.size()){
+            posicionPagina = posicionPagina -1;
             rd1.setText(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).respuesta);
             rd2.setText(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).respuesta);
             rd3.setText(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).respuesta);
@@ -185,30 +190,32 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    if(rd1.isChecked()){
-                        if(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta){
-                            MostrarMensaje("Muy Bien! Respuesta Correcta" ,true);
+                    if (rd1.isChecked()) {
+                        if (listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta) {
+                            MostrarMensaje("Muy bien, vamos al siguiente tema", true);
                         }
-                        if(!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta){
-                            MostrarMensaje("Vuelve a intentarlo", false);
-                        }
-
-                    }else if(rd2.isChecked()){
-                        if(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta){
-                            MostrarMensaje("Muy Bien! Respuesta Correcta", true);
-                        }
-                        if(!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta){
-                            MostrarMensaje("Vuelve a intentarlo", false);
+                        if (!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta) {
+                            MostrarMensaje("Inténtalo una vez más, tu puedes!\n", false);
                         }
 
-                    }else{
-                        if(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta){
-                            MostrarMensaje("Muy Bien! Respuesta Correcta", true);
+                    } else if (rd2.isChecked()) {
+                        if (listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta) {
+                            MostrarMensaje("Muy bien, vamos al siguiente tema", true);
                         }
-                        if(!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta){
-                            MostrarMensaje("Vuelve a intentarlo", false);
+                        if (!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta) {
+                            MostrarMensaje("Inténtalo una vez más, tu puedes!\n", false);
                         }
 
+                    } else if (rd3.isChecked()) {
+                        if (listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta) {
+                            MostrarMensaje("Muy bien, vamos al siguiente tema", true);
+                        }
+                        if (!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta) {
+                            MostrarMensaje("Inténtalo una vez más, tu puedes!\n", false);
+                        }
+
+                    } else {
+                        MostrarMensaje("Selecciona una opción", null);
                     }
 
                 }
@@ -225,37 +232,36 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         }
     }
 
-    public void ValidarRespuesta(View v){
 
-        RadioButton rd1 = (RadioButton) findViewById(R.id.rd_1);
-        RadioButton rd2 = (RadioButton) findViewById(R.id.rd_2);
-        RadioButton rd3 = (RadioButton) findViewById(R.id.rd_3);
+    public void BackPage(View view){
 
-        if(rd1.isChecked()){
-            if(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta){
-               MostrarMensaje("Muy Bien! Respuesta Correcta", null);
-            }
-            if(!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta){
-                MostrarMensaje("Vuelve a intentarlo", null);
+
+        if (posicionPagina > 0) {
+
+            posicionPagina = posicionPagina - 1;
+
+            if (posicionPagina < listEmergencia.size()) {
+                siguiente.setText("Siguiente");
             }
 
-        }else if(rd2.isChecked()){
-            if(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta){
-                MostrarMensaje("Muy Bien! Respuesta Correcta", null);
+            if (posicionPagina>0){
+                nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
+                imagen.setImageResource(listEmergencia.get(posicionPagina - 1).getImagen());
+                toolbarCard.setTitle(listEmergencia.get(posicionPagina - 1).getTitulo());
+                toolbarCard.setSubtitle("Parte " + String.valueOf(posicionPagina) + "/" + String.valueOf(listEmergencia.size()));
             }
-            if(!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta){
-                MostrarMensaje("Vuelve a intentarlo", null);
+            if (posicionPagina==1){
+                anterior.setVisibility(view.INVISIBLE);
             }
 
-        }else{
-            if(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta){
-                MostrarMensaje("Muy Bien! Respuesta Correcta", null);
-            }
-            if(!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta){
-                MostrarMensaje("Vuelve a intentarlo", null);
-            }
 
         }
+
+
+
+
+
+
 
     }
 
@@ -268,15 +274,23 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         TextView text = (TextView) layout.findViewById(R.id.text);
         ImageView img = (ImageView) layout.findViewById(R.id.img);
         text.setText(texto);
-        if(esCorrcta){
-            img.setImageResource(R.drawable.feliz);
-        }else{
-            img.setImageResource(R.drawable.carita_triste);
+        if(esCorrcta!=null){
+            if(esCorrcta){
+                img.setImageResource(R.drawable.correcta);
+                Intent i = new Intent(this,MainActivity.class);
+                startActivity(i);
+
+            }else{
+                img.setImageResource(R.drawable.incorrecto);
+            }
+        }
+       else{
+
         }
 
         Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
 

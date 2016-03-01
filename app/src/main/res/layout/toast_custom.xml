@@ -5,7 +5,7 @@
     android:padding="8dp"
     android:background="#DAAA"
     >
-    <ImageView android:src="@drawable/rescate"
+    <ImageView
         android:layout_width="wrap_content"
         android:id="@+id/img"
         android:layout_height="wrap_content"
@@ -15,8 +15,8 @@
         android:text="Muy bien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img"
+        android:layout_toRightOf="@+id/img"
         android:textColor="#FFF"
-        android:textSize="30sp"
+        android:textSize="15sp"
         />
 </RelativeLayout>

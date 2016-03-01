@@ -93,8 +93,8 @@ public class TwoFragment extends Fragment {
         Preguntas preguntaFractura = new Preguntas("Síntomas de una fractura", respuestaFractura);
 
         ArrayList<AtencionesEmergencias>  fractura = new ArrayList<AtencionesEmergencias>();
-        fractura.add(new AtencionesEmergencias(null, contenidoFractura1, "FRACTURAS", preguntaFractura));
-        fractura.add(new AtencionesEmergencias(null, contenidoFractura2, null, preguntaFractura));
+        fractura.add(new AtencionesEmergencias(R.drawable.fractura1, contenidoFractura1, "FRACTURAS", preguntaFractura));
+        fractura.add(new AtencionesEmergencias(R.drawable.fractura1, contenidoFractura2, null, preguntaFractura));
 
 
         String hemorragea1="Es la pérdida abundante de sangre al romperse un vaso sanguineo" +
