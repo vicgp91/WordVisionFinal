@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="pa.resilienciacomunitaria.org.wordvision.VerInfoPrimerosAuxilios">
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdGroup">
+
+    <RadioButton
+        android:id="@+id/rd_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:layout_marginTop="10dp"
+        android:divider="#7F7F7F"
+        android:dividerHeight="2dp"
+        android:textSize="23sp"/>
+
+    <RadioButton
+        android:id="@+id/rd_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rd_1"
+        android:divider="#7F7F7F"
+        android:layout_marginTop="10dp"
+        android:dividerHeight="2dp"
+        android:text="B"
+        android:textSize="23sp"/>
+
+
+    <RadioButton
+        android:id="@+id/rd_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rd_2"
+        android:text="B"
+        android:layout_marginTop="10dp"
+        android:divider="#7F7F7F"
+        android:dividerHeight="2dp"
+        android:textSize="23sp"/>
+
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/btnValidaRespuesta"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rdGroup"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:text="Responder" />
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnValidaRespuesta"
+        android:layout_centerInParent="true"
+        android:text="Cancelar" />
+</RelativeLayout>
