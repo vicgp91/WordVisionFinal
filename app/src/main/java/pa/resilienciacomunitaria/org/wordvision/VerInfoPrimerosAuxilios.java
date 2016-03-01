@@ -279,6 +279,9 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                 img.setImageResource(R.drawable.correcta);
                 Intent i = new Intent(this,MainActivity.class);
                 startActivity(i);
+                /*Intent intent = new Intent(this, TwoFragment.class);
+                startActivity(intent);*/
+
 
             }else{
                 img.setImageResource(R.drawable.incorrecto);

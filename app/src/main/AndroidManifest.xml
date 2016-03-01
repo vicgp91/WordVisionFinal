@@ -29,8 +29,12 @@
                 android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".VerInfoPrimerosAuxilios"
             android:label="@string/title_activity_ver_info_primeros_auxilios" >
+            <meta-data
+                android:name="android.support.v4.PARENT_ACTIVITY"
+                android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
         <activity
             android:name=".SplashScreenActivity"

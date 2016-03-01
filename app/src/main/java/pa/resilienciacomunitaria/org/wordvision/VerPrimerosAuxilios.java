@@ -27,7 +27,7 @@ public class VerPrimerosAuxilios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_primeros_auxilios);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-       setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         titulo= getIntent().getExtras().getString("titulo");
         imagen = getIntent().getExtras().getInt("imagen");
         contenido = getIntent().getExtras().getString("contenido");
