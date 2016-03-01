@@ -11,11 +11,22 @@ public class AtencionesEmergencias {
     private Integer imagen;
     private String descripcion;
     private String titulo;
+    private Preguntas preguntas;
 
-    AtencionesEmergencias(Integer imagen, String descripcion, String titulo) {
+
+    AtencionesEmergencias(Integer imagen, String descripcion, String titulo, Preguntas preguntas) {
         this.imagen = imagen;
         this.descripcion = descripcion;
         this.titulo=titulo;
+        this.preguntas=preguntas;
+
+    }
+    public Preguntas getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(Preguntas preguntas) {
+        this.preguntas = preguntas;
     }
 
     public String getTitulo() {

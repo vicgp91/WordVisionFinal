@@ -82,9 +82,20 @@ public class TwoFragment extends Fragment {
                 "\nSignos:" +
                 "\n-Deformidad. \n-Inflamación. \n-Incapacidad de movimiento. \n-Aumento o acortamiento del miembro. \n-Área lesionada  enturmecida y Fría. \n-La piel tiene un color Azul. ";
 
+
+
+        ArrayList<Respuestas>  respuestaFractura = new ArrayList<Respuestas>();
+        respuestaFractura.add(new Respuestas("Perdida de visión", false));
+        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
+        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
+
+
+        Preguntas preguntaFractura = new Preguntas("Síntomas de una fractura", respuestaFractura);
+
         ArrayList<AtencionesEmergencias>  fractura = new ArrayList<AtencionesEmergencias>();
-        fractura.add(new AtencionesEmergencias(null, contenidoFractura1, "FRACTURAS"));
-        fractura.add(new AtencionesEmergencias(null, contenidoFractura2, null));
+        fractura.add(new AtencionesEmergencias(null, contenidoFractura1, "FRACTURAS", preguntaFractura));
+        fractura.add(new AtencionesEmergencias(null, contenidoFractura2, null, preguntaFractura));
+
 
         String hemorragea1="Es la pérdida abundante de sangre al romperse un vaso sanguineo" +
                 "\nTIPOS DE HEMORRAGIAS: " +
@@ -100,8 +111,8 @@ public class TwoFragment extends Fragment {
                 "\nPresión Indirecta: Usando la yema de los dedos, la palma de la mano, se apretará en el sitio afectado donde podamos prensar la arteria por donde sale la sangre contra el hueso, a fin de evitar el paso de la sangre.";
 
         ArrayList<AtencionesEmergencias>  hemorrageas = new ArrayList<AtencionesEmergencias>();
-        hemorrageas.add(new AtencionesEmergencias(null, hemorragea1, "HEMORRAGIAS"));
-        hemorrageas.add(new AtencionesEmergencias(null, hemorragia2, "Primeros Auxilios para hemorragias"));
+        hemorrageas.add(new AtencionesEmergencias(null, hemorragea1, "HEMORRAGIAS", null));
+        hemorrageas.add(new AtencionesEmergencias(null, hemorragia2, "Primeros Auxilios para hemorragias", null));
 
         String herida1="Es la separación de los tejidos de la piel, que puede dejar al descubierto otras partes del cuerpo como los huesos y otros órganos del ser humano que se encuentrann internamente.";
         String herida2="\n1. Cortantes: Bordes rectilíneos (cuchillo, gillette, navaja)." +
@@ -112,13 +123,13 @@ public class TwoFragment extends Fragment {
                 "\n5. Avulsiva: Desgarre o pérdida de un miembro o parte del cuerpo.";
 
         ArrayList<AtencionesEmergencias>  heridas = new ArrayList<AtencionesEmergencias>();
-        heridas.add(new AtencionesEmergencias(null, herida1, "HERIDAS"));
-        heridas.add(new AtencionesEmergencias(null, herida2, "LOS ELEMENTOS QUE PUEDEN PRODUCIR HERIDAS SON: "));
+        heridas.add(new AtencionesEmergencias(null, herida1, "HERIDAS", null));
+        heridas.add(new AtencionesEmergencias(null, herida2, "LOS ELEMENTOS QUE PUEDEN PRODUCIR HERIDAS SON: ", null));
 
         ArrayList<AtencionesEmergencias>  inmobilizacion = new ArrayList<AtencionesEmergencias>();
-        inmobilizacion.add(new AtencionesEmergencias(null, null, null));
-        inmobilizacion.add(new AtencionesEmergencias(null, null, null));
-        inmobilizacion.add(new AtencionesEmergencias(null, null, null));
+        inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
+        inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
+        inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
 
 
         primerosAuxilios.add(new PrimerosAuxilios(null,"Fracturas", R.drawable.fracturalist, fractura));
