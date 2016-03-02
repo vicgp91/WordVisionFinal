@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
 
       //  setupTabIcons();
     }

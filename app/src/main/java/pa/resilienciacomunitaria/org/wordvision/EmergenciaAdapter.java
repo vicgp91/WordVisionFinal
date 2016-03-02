@@ -29,10 +29,14 @@ public class EmergenciaAdapter extends ArrayAdapter<PrimerosAuxilios> {
                 R.layout.items_auxilio, null);
 				
         ImageView imagen = (ImageView) item.findViewById(R.id.imgAux);
+
         imagen.setImageResource(datos.get(position).getImagen());
 
         TextView nombre = (TextView) item.findViewById(R.id.tvTituloAux);
         nombre.setText(datos.get(position).getNombre());
+
+        TextView contenido = (TextView) item.findViewById(R.id.tvdescripcion);
+        contenido.setText(datos.get(position).getDescripcion());
         return item;
     }
 

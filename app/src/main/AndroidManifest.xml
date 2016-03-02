@@ -29,9 +29,9 @@
                 android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
         <activity
-            android:parentActivityName=".MainActivity"
             android:name=".VerInfoPrimerosAuxilios"
-            android:label="@string/title_activity_ver_info_primeros_auxilios" >
+            android:label="@string/title_activity_ver_info_primeros_auxilios"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.v4.PARENT_ACTIVITY"
                 android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
@@ -39,6 +39,10 @@
         <activity
             android:name=".SplashScreenActivity"
             android:label="@string/title_activity_splash_screen" >
+        </activity>
+        <activity
+            android:name=".InscribiseActivity"
+            android:label="@string/title_activity_inscribise" >
         </activity>
     </application>
 

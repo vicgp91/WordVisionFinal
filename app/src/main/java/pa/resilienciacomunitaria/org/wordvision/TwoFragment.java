@@ -56,11 +56,11 @@ public class TwoFragment extends Fragment {
 
                 // dialog(contactos.get(position).getTelefono());
                 // MostrarNota(position);
-                Intent i = new Intent(rootView.getContext(), VerInfoPrimerosAuxilios.class );
+                Intent i = new Intent(rootView.getContext(), VerInfoPrimerosAuxilios.class);
                 i.putExtra("titulo", primerosAuxilios.get(position).getNombre());
                 i.putExtra("imagen", primerosAuxilios.get(position).getImagen());
                 i.putExtra("contenido", primerosAuxilios.get(position).getDescripcion());
-                i.putExtra("atencionesEmergencias", new Gson().toJson(primerosAuxilios.get(position).getEmergenciasArrayList() ));
+                i.putExtra("atencionesEmergencias", new Gson().toJson(primerosAuxilios.get(position).getEmergenciasArrayList()));
 
 
                 //i.putExtra("atencionesEmergencias",primerosAuxilios.get(position).getEmergenciasArrayList() );
@@ -132,10 +132,10 @@ public class TwoFragment extends Fragment {
         inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
 
 
-        primerosAuxilios.add(new PrimerosAuxilios(null,"Fracturas", R.drawable.fracturalist, fractura));
-        primerosAuxilios.add(new PrimerosAuxilios(null, "Hemorrageas", R.drawable.hemorragialist, hemorrageas));
-        primerosAuxilios.add(new PrimerosAuxilios(null, "Heridas", R.drawable.primerosauxilios, heridas));
-        primerosAuxilios.add(new PrimerosAuxilios(null, "Inmobilización ", R.drawable.primerosauxilios, inmobilizacion));
+        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de una fractura ","Fracturas", R.drawable.fracturalist, fractura));
+        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de una hemorragia", "Hemorrágia", R.drawable.hemorragialist, hemorrageas));
+        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de sufrir una herida", "Heridas", R.drawable.primerosauxilios, heridas));
+        primerosAuxilios.add(new PrimerosAuxilios("Como llevar a cabo una inmobilización", "Inmobilización ", R.drawable.primerosauxilios, inmobilizacion));
     }
 
 

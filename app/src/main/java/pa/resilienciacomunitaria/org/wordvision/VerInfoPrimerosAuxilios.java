@@ -308,5 +308,6 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         imageViewExpand.startAnimation(animation);
     }
 
+
 }
 

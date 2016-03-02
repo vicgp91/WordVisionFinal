@@ -1,13 +1,18 @@
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pa.resilienciacomunitaria.org.wordvision.TwoFragment">
+
+
+
+
     <TextView
         android:id="@+id/tvItemFieldAux"
         android:layout_width="wrap_content"
@@ -28,8 +33,9 @@
         android:divider="#7F7F7F"
         android:dividerHeight="2dp"
         android:layout_below="@+id/tvItemFieldAux"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="4"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="20dp"
+
         />
 
     <TextView
@@ -38,5 +44,4 @@
         android:layout_height="wrap_content"
         android:text="" />
 
-
-</RelativeLayout>
+</LinearLayout>

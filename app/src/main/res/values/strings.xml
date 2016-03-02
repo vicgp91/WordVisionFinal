@@ -20,5 +20,25 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_inscribise">InscribiseActivity</string>
+
+    <string-array name="pais_array">
+            <item>Selecciona un País</item>
+            <item>Bolivia</item>
+            <item>Brazil</item>
+            <item>Chile</item>
+            <item>Colombia</item>
+            <item>Republica Dominicana</item>
+            <item>Ecuador</item>
+            <item>Guatemala</item>
+            <item>Honduras</item>
+             <item>Haiti</item>
+             <item>Mexico</item>
+             <item>Nicaragua</item>
+            <item>Peru</item>
+            <item>El Salvador</item>
+            <item>Panamá</item>
+        </string-array>
+
 
 </resources>
