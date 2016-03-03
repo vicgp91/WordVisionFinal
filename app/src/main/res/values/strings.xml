@@ -20,7 +20,12 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
-    <string name="title_activity_inscribise">InscribiseActivity</string>
+    <string name="title_activity_inscribise">Inscribirse</string>
+
+    <string name="ubicacion">Edificio 223, Local B y C, 2do. Piso Clayton, City of Knowledge, Clayton, Panama
+    </string>
+
+    <string name="webUrl">http://www.wvi.org</string>
 
     <string-array name="pais_array">
             <item>Selecciona un País</item>
@@ -28,17 +33,24 @@
             <item>Brazil</item>
             <item>Chile</item>
             <item>Colombia</item>
-            <item>Republica Dominicana</item>
+            <item>República Dominicana</item>
             <item>Ecuador</item>
             <item>Guatemala</item>
             <item>Honduras</item>
-             <item>Haiti</item>
-             <item>Mexico</item>
+             <item>Haití</item>
+             <item>México</item>
              <item>Nicaragua</item>
-            <item>Peru</item>
+            <item>Perú</item>
             <item>El Salvador</item>
             <item>Panamá</item>
         </string-array>
+
+
+    <string-array name="genero_array">
+        <item>Selecciona Género</item>
+        <item>M</item>
+        <item>F</item>
+    </string-array>
 
 
 </resources>

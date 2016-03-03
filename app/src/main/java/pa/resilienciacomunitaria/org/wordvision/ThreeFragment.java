@@ -45,7 +45,7 @@ public class ThreeFragment extends Fragment {
         contenido.setText("Compartir");
         imagen.setImageResource(R.drawable.primerosauxilios);*/
 
-        rootView.findViewById(R.id.urloficial).setOnClickListener(new View.OnClickListener() {
+       /* rootView.findViewById(R.id.urloficial).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Uri uri = Uri.parse("http://www.resilienciacomunitaria.org/index.php/es/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -67,7 +67,7 @@ public class ThreeFragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 
