@@ -95,7 +95,7 @@ public class TwoFragment extends Fragment {
         ArrayList<AtencionesEmergencias>  fractura = new ArrayList<AtencionesEmergencias>();
         fractura.add(new AtencionesEmergencias(R.drawable.fractura1, contenidoFractura1, "FRACTURAS", preguntaFractura));
         fractura.add(new AtencionesEmergencias(R.drawable.fractura1, contenidoFractura2, null, preguntaFractura));
-
+//------------------------------------------HEmorragia-------------------------------------------------------------------------
 
         String hemorragea1="Es la pérdida abundante de sangre al romperse un vaso sanguineo" +
                 "\nTIPOS DE HEMORRAGIAS: " +
@@ -110,32 +110,73 @@ public class TwoFragment extends Fragment {
                 "\nElevación: Elevar las extremidades afectadas (piernas o brazos), para aminorar la salida de sangre al sitio de la herida. Si no existen fracturas u objetos ensartados  se elevan las extremidades afectadas a un nivel más alto que el del corazón" +
                 "\nPresión Indirecta: Usando la yema de los dedos, la palma de la mano, se apretará en el sitio afectado donde podamos prensar la arteria por donde sale la sangre contra el hueso, a fin de evitar el paso de la sangre.";
 
+
+        ArrayList<Respuestas>  respuestaHemorragia = new ArrayList<Respuestas>();
+        respuestaFractura.add(new Respuestas("Perdida de visión", false));
+        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
+        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
+
+
+        Preguntas preguntaHemorragia = new Preguntas("Síntomas de una fractura", respuestaFractura);
+
         ArrayList<AtencionesEmergencias>  hemorrageas = new ArrayList<AtencionesEmergencias>();
-        hemorrageas.add(new AtencionesEmergencias(null, hemorragea1, "HEMORRAGIAS", null));
-        hemorrageas.add(new AtencionesEmergencias(null, hemorragia2, "Primeros Auxilios para hemorragias", null));
+        hemorrageas.add(new AtencionesEmergencias(R.drawable.heridas1info, hemorragea1, "HEMORRAGIAS", preguntaHemorragia));
+        hemorrageas.add(new AtencionesEmergencias(R.drawable.heridas2info, hemorragia2, "Primeros Auxilios para hemorragias", preguntaHemorragia));
+
+//---------------------------------HEridas------------------------------------------------------------------------
+
 
         String herida1="Es la separación de los tejidos de la piel, que puede dejar al descubierto otras partes del cuerpo como los huesos y otros órganos del ser humano que se encuentrann internamente.";
-        String herida2="\n1. Cortantes: Bordes rectilíneos (cuchillo, gillette, navaja)." +
+        String herida2="\n1. No haga nada que le cause mas dolor a la persona." +
+                "\n2. Inmobilice el área lesionada en posición de mayor comodidad." +
+                "\n3. Examine la circulación distal antes y despues de la inmobilización." +
+                "\n3. Tranquilizar a la persona afectada." +
+                "\n4. Visualizar la fractura y estabilizar manualmente." +
+                "\n5. Seleccionar el material de inmobilización adecuado.";
+
+
+        ArrayList<Respuestas>  respuestaHeridas = new ArrayList<Respuestas>();
+        respuestaFractura.add(new Respuestas("Perdida de visión", false));
+        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
+        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
+
+
+        Preguntas preguntaHErida = new Preguntas("Síntomas de una fractura", respuestaFractura);
+
+        ArrayList<AtencionesEmergencias>  heridas = new ArrayList<AtencionesEmergencias>();
+        heridas.add(new AtencionesEmergencias(R.drawable.heridas1info,herida1, "HERIDAS", preguntaHErida));
+        heridas.add(new AtencionesEmergencias(R.drawable.heridas2info, herida2, "LOS ELEMENTOS QUE PUEDEN PRODUCIR HERIDAS SON: ", preguntaHErida));
+
+        //----------------------------------Inmobilizacion
+
+        String inmobilizacion1="Un entablillado puede ser preparado comercialmente o improvizado. tambien es posible utilizar una parte del cuerpo que no se encuentre lesionada, por  ejemplo: La otra pierna o el costado del cuerpo.";
+        String inmobilizacion2="\n1. Cortantes: Bordes rectilíneos (cuchillo, gillette, navaja)." +
                 "\n2. Lacerantes: Bordes irregulares (latón, sierra, vidrio)." +
                 "\n3. Punzantes: Orificio a veces con salida (punzón, clavos, agujas)" +
                 "\n3. Contusas: Golpes fuertes (pedradas, martillazos)." +
                 "\n4. Corto Punzante: Bordes rectilíneos  y orificio (verruguilla, navaja)." +
                 "\n5. Avulsiva: Desgarre o pérdida de un miembro o parte del cuerpo.";
 
-        ArrayList<AtencionesEmergencias>  heridas = new ArrayList<AtencionesEmergencias>();
-        heridas.add(new AtencionesEmergencias(null, herida1, "HERIDAS", null));
-        heridas.add(new AtencionesEmergencias(null, herida2, "LOS ELEMENTOS QUE PUEDEN PRODUCIR HERIDAS SON: ", null));
+        ArrayList<Respuestas>  respuestaInmobilizacion = new ArrayList<Respuestas>();
+        respuestaFractura.add(new Respuestas("Perdida de visión", false));
+        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
+        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
+
+
+        Preguntas preguntaInmobilizacion = new Preguntas("Síntomas de una fractura", respuestaFractura);
+
+
 
         ArrayList<AtencionesEmergencias>  inmobilizacion = new ArrayList<AtencionesEmergencias>();
-        inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
-        inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
-        inmobilizacion.add(new AtencionesEmergencias(null, null, null, null));
+        inmobilizacion.add(new AtencionesEmergencias(R.drawable.inmobilizacioninfo1, inmobilizacion1, "Inmobilización", preguntaInmobilizacion));
+        inmobilizacion.add(new AtencionesEmergencias(R.drawable.inmobilizacioninfo2, inmobilizacion1, "Notas importantes para la inmobilización", preguntaInmobilizacion));
+
 
 
         primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de una fractura ","Fracturas", R.drawable.fracturalist, fractura));
         primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de una hemorragia", "Hemorrágia", R.drawable.hemorragialist, hemorrageas));
-        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de sufrir una herida", "Heridas", R.drawable.primerosauxilios, heridas));
-        primerosAuxilios.add(new PrimerosAuxilios("Como llevar a cabo una inmobilización", "Inmobilización ", R.drawable.primerosauxilios, inmobilizacion));
+        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de sufrir una herida", "Heridas", R.drawable.heridas_icon, heridas));
+        primerosAuxilios.add(new PrimerosAuxilios("Como llevar a cabo una inmobilización", "Inmobilización ", R.drawable.inmo_icon, inmobilizacion));
     }
 
 

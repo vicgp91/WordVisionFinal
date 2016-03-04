@@ -162,43 +162,48 @@
 "
                     />
 
-            <!--<ImageButton  android:id="@+id/urlfacebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Acceder"
-                android:layout_below="@+id/contactenos"
-                android:background="@android:color/transparent"
-                android:layout_marginRight="4dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="4dp"
-                android:src="@drawable/megusta"
-                />
-            <ImageButton  android:id="@+id/urltwitter"
-                android:layout_width="fill_parent"
-                android:layout_below="@+id/contactenos"
-                android:layout_toRightOf="@+id/urlfacebook"
-                android:layout_height="wrap_content"
-                android:text="Acceder"
-                android:background="@android:color/transparent"
-                android:layout_marginRight="4dp"
-                android:layout_marginLeft="4dp"
-                android:src="@drawable/twitter"
-                android:layout_marginTop="16dp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                />
+                    <ImageButton
+                        android:id="@+id/urlfacebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acceder"
+                        android:background="@android:color/transparent"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="4dp"
+                        android:src="@drawable/facebook_48" />
 
-            <ImageButton
-                android:id="@+id/urloficial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Acceder"
-                android:layout_toRightOf="@+id/urltwitter"
-                android:layout_below="@+id/contenido"
-                android:background="@android:color/transparent"
-                android:layout_marginRight="4dp"
-                android:layout_marginLeft="4dp"
-                android:src="@drawable/resil"
-                android:layout_marginTop="16dp" />-->
+
+                    <ImageButton  android:id="@+id/urltwitter"
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/urlfacebook"
+                        android:layout_height="wrap_content"
+                        android:text="Acceder"
+                        android:background="@android:color/transparent"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:src="@drawable/twitter_48"
+                        android:layout_marginTop="16dp" />
+
+                    <!--<ImageButton
+                        android:id="@+id/urloficial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acceder"
+                        android:layout_toRightOf="@+id/urltwitter"
+                        android:background="@android:color/transparent"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:src="@drawable/resil"
+                        android:layout_marginTop="16dp" />-->
+
+                </RelativeLayout>
+
+
 
                 <TextView
                     android:id="@+id/inscribirse"
