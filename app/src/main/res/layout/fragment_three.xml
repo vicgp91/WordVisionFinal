@@ -37,13 +37,13 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
                 android:src="@drawable/wv_logo"
                 android:layout_marginTop="16dp"
                 android:adjustViewBounds="true"
-                android:scaleType="centerInside"
+                android:gravity="right"
+                android:layout_weight="1"
 
                 />
 
@@ -151,6 +151,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_below="@+id/telnum"
+                    android:autoLink="all"
                     android:layout_toRightOf="@+id/page"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
