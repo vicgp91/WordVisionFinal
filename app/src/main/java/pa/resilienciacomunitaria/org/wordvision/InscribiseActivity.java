@@ -1,6 +1,8 @@
 package pa.resilienciacomunitaria.org.wordvision;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;
@@ -12,6 +14,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -43,6 +46,8 @@ public class InscribiseActivity extends AppCompatActivity {
     private EditText txvNombre, txvEdad, txvTelefono, txvEmail;
     Spinner spinnerPais, spinnerGenero;
     private String ubicacion, genero;
+    ProgressDialog dialog;
+
     private CheckBox checkBoxRescate, checkBoxDonacion, checkBoxOrganizacion;
 
     private TextInputLayout inputLayoutName, inputLayoutEdad, inputLayoutTelefono, inputLayoutEmail;
@@ -105,7 +110,13 @@ public class InscribiseActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Complete todos los datos", Toast.LENGTH_SHORT).show();
 
                 } else {
+
+                    dialog = ProgressDialog.show(InscribiseActivity.this, "",
+                            "Procesando Solicitud....", true);
+
                     new EnviarDatos(InscribiseActivity.this).execute();
+
+
                 }
 
 
@@ -217,6 +228,8 @@ public class InscribiseActivity extends AppCompatActivity {
                             txvEdad.setText("");
                             txvEmail.setText("");
                             txvTelefono.setText("");
+                            dialog.cancel();
+
                         }
                     });
                 }
