@@ -38,7 +38,7 @@ public class participa_fragment extends Fragment {
 
 
         imagen1.setImageResource(R.drawable.wv_logo);
-        imagen2.setImageResource(R.drawable.logo_nino);
+        imagen2.setImageResource(R.drawable.rescate);
         titulo.setText("Bienvenido, Bienvenida!");
         contenido.setText("Aquí aprenderas de las guias técnicas de rescate, completalas todas :)" +
                 "\nDirectorio con teléfonos de emergencia." +
