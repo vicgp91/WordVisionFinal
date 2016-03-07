@@ -39,12 +39,14 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import fr.ganfra.materialspinner.MaterialSpinner;
+
 
 public class InscribiseActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private Toolbar toolbarCard;
     private EditText txvNombre, txvEdad, txvTelefono, txvEmail;
-    Spinner spinnerPais, spinnerGenero;
+    MaterialSpinner spinnerPais, spinnerGenero;
     private String ubicacion, genero;
     ProgressDialog dialog;
 
@@ -70,8 +72,8 @@ public class InscribiseActivity extends AppCompatActivity {
 
 
         txvNombre=(EditText)findViewById(R.id.nombre);
-        spinnerPais = (Spinner) findViewById(R.id.pais_spinner);
-        spinnerGenero = (Spinner) findViewById(R.id.genero_spinner);
+        spinnerPais = (MaterialSpinner) findViewById(R.id.pais_spinner);
+        spinnerGenero = (MaterialSpinner) findViewById(R.id.genero_spinner);
         txvEdad=(EditText)findViewById(R.id.edad);
         txvTelefono=(EditText)findViewById(R.id.telefono);
         txvTelefono=(EditText)findViewById(R.id.telefono);
@@ -91,15 +93,19 @@ public class InscribiseActivity extends AppCompatActivity {
         txvTelefono.addTextChangedListener(new MyTextWatcher(txvTelefono));
         txvEmail.addTextChangedListener(new MyTextWatcher(txvEmail));
 
+
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.pais_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPais.setAdapter(adapter);
+        spinnerPais.setHint("Escoga un País");
 
         ArrayAdapter<CharSequence> adapterGEnero = ArrayAdapter.createFromResource(this,
                 R.array.genero_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGenero.setAdapter(adapterGEnero);
+        spinnerGenero.setHint("Selecciona Género");
 
         insertar.setOnClickListener(new View.OnClickListener() {
             @Override

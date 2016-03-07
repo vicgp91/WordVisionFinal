@@ -28,7 +28,6 @@
     <string name="webUrl">http://www.wvi.org</string>
 
     <string-array name="pais_array">
-            <item>Selecciona un País</item>
             <item>Bolivia</item>
             <item>Brazil</item>
             <item>Chile</item>
@@ -47,7 +46,6 @@
 
 
     <string-array name="genero_array">
-        <item>Selecciona Género</item>
         <item>M</item>
         <item>F</item>
     </string-array>
