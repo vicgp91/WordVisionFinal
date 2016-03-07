@@ -3,9 +3,16 @@ package pa.resilienciacomunitaria.org.wordvision;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -25,6 +32,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataOutputStream;
@@ -33,6 +43,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +65,6 @@ public class InscribiseActivity extends AppCompatActivity {
 
     private TextInputLayout inputLayoutName, inputLayoutEdad, inputLayoutTelefono, inputLayoutEmail;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +76,6 @@ public class InscribiseActivity extends AppCompatActivity {
         toolbarCard = (Toolbar) findViewById(R.id.toolbarCard);
         toolbarCard.setTitle("Inscribite como voluntario");
         toolbarCard.setSubtitle("Completa los siguientes datos: ");
-
 
         txvNombre=(EditText)findViewById(R.id.nombre);
         spinnerPais = (MaterialSpinner) findViewById(R.id.pais_spinner);
@@ -113,15 +119,16 @@ public class InscribiseActivity extends AppCompatActivity {
 
                 if (!validateName() || !validaEdad() || !validaTelefono() || !validaEmail() ) {
 
-                    Toast.makeText(getApplicationContext(), "Complete todos los datos", Toast.LENGTH_SHORT).show();
-
                 } else {
 
-                    dialog = ProgressDialog.show(InscribiseActivity.this, "",
-                            "Procesando Solicitud....", true);
-
-                    new EnviarDatos(InscribiseActivity.this).execute();
-
+                    if(!isOnline(InscribiseActivity.this)){
+                        dialog(null);
+                    }
+                    else{
+                        dialog = ProgressDialog.show(InscribiseActivity.this, "",
+                                "Procesando Solicitud....", true);
+                        new EnviarDatos(InscribiseActivity.this).execute();
+                    }
 
                 }
 
@@ -155,11 +162,16 @@ public class InscribiseActivity extends AppCompatActivity {
     }
 
 
-    public Boolean registroUsuario(){
+    public String CargarPreferencia(){
+        SharedPreferences prefs = getSharedPreferences("Inscribciones", Context.MODE_PRIVATE);
+        String jsonObject = prefs.getString("lista", "");
+        return jsonObject;
+    }
+
+
+    public Boolean registroUsuario(Boolean tieneRed){
         try {
             String ubicacion, nombre, genero, edad, telefono, email, interes1="", interes2="", interes3="";
-
-
             ubicacion=spinnerPais.getSelectedItem().toString();
             nombre=txvNombre.getText().toString();
             genero=spinnerGenero.getSelectedItem().toString();
@@ -176,25 +188,54 @@ public class InscribiseActivity extends AppCompatActivity {
                 interes3="Organizacion";
             }
 
-            URL url = new URL("https://docs.google.com/forms/d/17jL6w5SjeFcKlePNoV09u25IFBDVdV__LGbLpIjP7OY/formResponse");
-            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-            conn.setReadTimeout(10000);
-            conn.setConnectTimeout(15000);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-            conn.setDoInput(true);
 
-            String urlParameters = "entry.432939312="+ubicacion+"&entry.525318752="+nombre+"&entry.1700987056="+genero+"&entry.2121113657="+edad+"&entry.1054429516="+telefono+"&entry.461351631="+email+"&entry.1452015913="+interes1+"&entry.1282439638="+interes2+"&entry.1535342956="+interes3+"";
-            conn.setDoOutput(true);
-            DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-            wr.writeBytes(urlParameters);
-            wr.flush();
-            wr.close();
-            int responseCode = conn.getResponseCode();
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(conn.getInputStream()));
+            if(tieneRed) {
+                URL url = new URL("https://docs.google.com/forms/d/17jL6w5SjeFcKlePNoV09u25IFBDVdV__LGbLpIjP7OY/formResponse");
+                HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                conn.setReadTimeout(10000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+                conn.setDoInput(true);
+                String urlParameters = "entry.432939312=" + ubicacion + "&entry.525318752=" + nombre + "&entry.1700987056=" + genero + "&entry.2121113657=" + edad + "&entry.1054429516=" + telefono + "&entry.461351631=" + email + "&entry.1452015913=" + interes1 + "&entry.1282439638=" + interes2 + "&entry.1535342956=" + interes3 + "";
+                conn.setDoOutput(true);
+                DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+                wr.writeBytes(urlParameters);
+                wr.flush();
+                wr.close();
+                int responseCode = conn.getResponseCode();
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(conn.getInputStream()));
 
-            in.close();
+                in.close();
+            }
+            else{
+
+                ArrayList<Participante> participanteList = new ArrayList<Participante>();
+
+                String gson = CargarPreferencia();
+                Type listType = new TypeToken<ArrayList<Participante>>() {
+                }.getType();
+
+                if(!gson.equalsIgnoreCase("")){
+                    participanteList = new Gson().fromJson(gson, listType);
+                }
+
+
+                participanteList.add(new Participante(ubicacion, nombre, genero, edad, telefono, email, interes1, interes2, interes3));
+
+                SharedPreferences prefs = getSharedPreferences("Inscribciones",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("lista", new Gson().toJson(participanteList));
+                editor.commit();
+
+
+
+
+
+            }
+
+
 
 
             return true;
@@ -207,16 +248,6 @@ public class InscribiseActivity extends AppCompatActivity {
         return false;
     }
 
-
-
-
-
-
-
-
-
-
-
     class EnviarDatos extends AsyncTask<String,String,String> {
         private Activity context;
         EnviarDatos(Activity contex){
@@ -225,7 +256,7 @@ public class InscribiseActivity extends AppCompatActivity {
 
         @Override
         protected  String doInBackground(String... params){
-                if(registroUsuario()){
+                if(registroUsuario(true)){
                     context.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -256,8 +287,6 @@ public class InscribiseActivity extends AppCompatActivity {
 
     }
 
-
-
     private boolean validateName() {
         if (txvNombre.getText().toString().trim().isEmpty()) {
             txvNombre.setError("Introduce tu nombre");
@@ -269,7 +298,6 @@ public class InscribiseActivity extends AppCompatActivity {
 
         return true;
     }
-
 
     private boolean validaEdad() {
         if (txvEdad.getText().toString().trim().isEmpty()) {
@@ -307,15 +335,11 @@ public class InscribiseActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-
     private void requestFocus(View view) {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
     }
-
 
     private class MyTextWatcher implements TextWatcher {
 
@@ -349,11 +373,52 @@ public class InscribiseActivity extends AppCompatActivity {
         }
     }
 
+    private boolean isOnline(Context context) {
+        boolean isInternetAvailable = false;
+        try
+        {
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
+            if(networkInfo != null && (networkInfo.isConnected()))
+            {
+                isInternetAvailable  = true;
+            }
+        }
+        catch(Exception exception)
+        {
 
+        }
 
+        return isInternetAvailable;
+    }
 
+    public  void dialog(String jsonObject)
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                InscribiseActivity.this);
+        alertDialogBuilder.setTitle("Sin Conexión a internet");
+        alertDialogBuilder.setMessage("¿Deseas guardar la información en tu dispositivo para que luego los datos se envién cuando" +
+                " tengas acceso a internet?").setCancelable(false).
+                setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
 
+                //String phoneNumber = n;
+                //Intent callintent = new Intent(Intent.ACTION_CALL);
+                //callintent.setData(Uri.parse("tel:" + phoneNumber));
+               // startActivity(callintent);
+                registroUsuario(false);
 
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
+    };
 
 }

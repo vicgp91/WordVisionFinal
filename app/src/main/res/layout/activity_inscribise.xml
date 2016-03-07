@@ -197,7 +197,8 @@ android:paddingBottom="@dimen/activity_vertical_margin">
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/input_layout_email"
                         android:gravity="center"
-                        android:text="Me gustaria colaborar en: "
+                        android:textSize="15sp"
+                        android:text="Me gustaría colaborar en: "
                         android:textColor="#757575"
                         android:inputType="text"
                         />

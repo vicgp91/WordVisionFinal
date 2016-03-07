@@ -56,6 +56,13 @@
                 android:name="android.support.v4.PARENT_ACTIVITY"
                 android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
+
+        <service android:name=".GuardarParticipantesService">
+
+
+        </service>
+
+
     </application>
 
 </manifest>
