@@ -47,6 +47,8 @@ import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -60,8 +62,10 @@ public class InscribiseActivity extends AppCompatActivity {
     MaterialSpinner spinnerPais, spinnerGenero;
     private String ubicacion, genero;
     ProgressDialog dialog;
+    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-    private CheckBox checkBoxRescate, checkBoxDonacion, checkBoxOrganizacion;
+    private CheckBox checkbox_taller, checkbox_instructor, checkbox_donaciones, checkbox_aprender;
 
     private TextInputLayout inputLayoutName, inputLayoutEdad, inputLayoutTelefono, inputLayoutEmail;
 
@@ -84,9 +88,11 @@ public class InscribiseActivity extends AppCompatActivity {
         txvTelefono=(EditText)findViewById(R.id.telefono);
         txvTelefono=(EditText)findViewById(R.id.telefono);
         txvEmail=(EditText)findViewById(R.id.email);
-        checkBoxDonacion=(CheckBox)findViewById(R.id.checkbox_donacion);
-        checkBoxRescate=(CheckBox)findViewById(R.id.checkbox_rescate);
-        checkBoxOrganizacion=(CheckBox)findViewById(R.id.checkbox_organizacion);
+
+        checkbox_taller=(CheckBox)findViewById(R.id.checkbox_taller);
+        checkbox_instructor=(CheckBox)findViewById(R.id.checkbox_instructor);
+        checkbox_donaciones=(CheckBox)findViewById(R.id.checkbox_donaciones);
+        checkbox_aprender=(CheckBox)findViewById(R.id.checkbox_aprender);
         Button insertar = (Button) findViewById(R.id.registro);
 
         inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
@@ -99,13 +105,11 @@ public class InscribiseActivity extends AppCompatActivity {
         txvTelefono.addTextChangedListener(new MyTextWatcher(txvTelefono));
         txvEmail.addTextChangedListener(new MyTextWatcher(txvEmail));
 
-
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.pais_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPais.setAdapter(adapter);
-        spinnerPais.setHint("Escoga un País");
+        spinnerPais.setHint("Escoja un País");
 
         ArrayAdapter<CharSequence> adapterGEnero = ArrayAdapter.createFromResource(this,
                 R.array.genero_array, android.R.layout.simple_spinner_item);
@@ -117,7 +121,7 @@ public class InscribiseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (!validateName() || !validaEdad() || !validaTelefono() || !validaEmail() ) {
+                if (!validateName() || !validaEdad() || !validaTelefono() || !validaEmail() || !validaPais() || !validaGenero()) {
 
                 } else {
 
@@ -178,14 +182,21 @@ public class InscribiseActivity extends AppCompatActivity {
             edad=txvEdad.getText().toString();
             telefono=txvTelefono.getText().toString();
             email=txvEmail.getText().toString();
-            if(checkBoxOrganizacion.isChecked()){
-                interes1="Rescate";
+
+            String intereses="";
+
+            if(checkbox_taller.isChecked()){
+                intereses=intereses+" Talleres Comunitarios,";
             }
-            if(checkBoxDonacion.isChecked()){
-                interes2="Donaciones";
+            if(checkbox_instructor.isChecked()){
+                intereses=intereses+" Instructor voluntario,";
             }
-            if(checkBoxOrganizacion.isChecked()){
-                interes3="Organizacion";
+            if(checkbox_donaciones.isChecked()){
+                intereses=intereses+" Donaciones,";
+            }
+
+            if(checkbox_aprender.isChecked()){
+                intereses=intereses+" Aprender sobre evaluaciones de daño.";
             }
 
 
@@ -197,7 +208,7 @@ public class InscribiseActivity extends AppCompatActivity {
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
                 conn.setDoInput(true);
-                String urlParameters = "entry.432939312=" + ubicacion + "&entry.525318752=" + nombre + "&entry.1700987056=" + genero + "&entry.2121113657=" + edad + "&entry.1054429516=" + telefono + "&entry.461351631=" + email + "&entry.1452015913=" + interes1 + "&entry.1282439638=" + interes2 + "&entry.1535342956=" + interes3 + "";
+                String urlParameters = "entry.432939312=" + ubicacion + "&entry.525318752=" + nombre + "&entry.1700987056=" + genero + "&entry.2121113657=" + edad + "&entry.1054429516=" + telefono + "&entry.461351631=" + email + "&entry.1452015913=" + intereses + "&entry.1282439638=" + interes2 + "&entry.1535342956=" + interes3 + "";
                 conn.setDoOutput(true);
                 DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
                 wr.writeBytes(urlParameters);
@@ -222,14 +233,17 @@ public class InscribiseActivity extends AppCompatActivity {
                 }
 
 
-                participanteList.add(new Participante(ubicacion, nombre, genero, edad, telefono, email, interes1, interes2, interes3));
+                participanteList.add(new Participante(ubicacion, nombre, genero, edad, telefono, email, intereses, interes2, interes3));
 
                 SharedPreferences prefs = getSharedPreferences("Inscribciones",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("lista", new Gson().toJson(participanteList));
                 editor.commit();
 
-
+                txvNombre.setText("");
+                txvEdad.setText("");
+                txvEmail.setText("");
+                txvTelefono.setText("");
 
 
 
@@ -304,7 +318,14 @@ public class InscribiseActivity extends AppCompatActivity {
             txvEdad.setError("Introduce edad");
             requestFocus(txvEdad);
             return false;
-        } else {
+        }
+        else if(Integer.parseInt(txvEdad.getText().toString().trim())<=0){
+            txvEdad.setError("Edad  Inválida");
+            requestFocus(txvEdad);
+            return false;
+        }
+
+        else {
             inputLayoutEdad.setErrorEnabled(false);
         }
 
@@ -323,12 +344,36 @@ public class InscribiseActivity extends AppCompatActivity {
         return true;
     }
 
+    public boolean validaPais(){
+        if(spinnerPais.getSelectedItem().toString().equalsIgnoreCase("Escoja un País")){
+            spinnerPais.setError("Escoja un País");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validaGenero(){
+        if(spinnerGenero.getSelectedItem().toString().equalsIgnoreCase("Selecciona Género")){
+            spinnerGenero.setError("Selecciona Género");
+            return false;
+        }
+        return true;
+    }
+
     private boolean validaEmail() {
+        Pattern pattern = Pattern.compile(PATTERN_EMAIL);
+        Matcher matcher = pattern.matcher(txvEmail.getText().toString().trim());
         if (txvEmail.getText().toString().trim().isEmpty()) {
             txvEmail.setError("Introduce un email");
             requestFocus(txvEmail);
             return false;
-        } else {
+        } else if(!matcher.matches()){
+            txvEmail.setError("Dirección de email iválido");
+            requestFocus(txvEmail);
+            return false;
+        }
+
+        else {
             inputLayoutEmail.setErrorEnabled(false);
         }
 

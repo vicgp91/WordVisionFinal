@@ -72,6 +72,7 @@ android:paddingBottom="@dimen/activity_vertical_margin">
                      android:layout_marginTop="10dp"
                      android:textColor="#000000" />-->
 
+
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/pais_spinner"
                     android:layout_marginTop="60dp"
@@ -83,6 +84,7 @@ android:paddingBottom="@dimen/activity_vertical_margin">
                     app:ms_floatingLabelText="Pais"
                     app:ms_hint="Seleccione un Pais"
                     app:ms_multiline="true" />
+
 
 
                 <android.support.design.widget.TextInputLayout
@@ -197,37 +199,47 @@ android:paddingBottom="@dimen/activity_vertical_margin">
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/input_layout_email"
                         android:gravity="center"
-                        android:textSize="15sp"
+                        android:textSize="20sp"
                         android:text="Me gustaría colaborar en: "
                         android:textColor="#757575"
                         android:inputType="text"
                         />
 
-                    <CheckBox android:id="@+id/checkbox_rescate"
-                        android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/checkbox_taller"
+                        android:layout_width="fill_parent"
                         android:textColor="#757575"
+                        android:textSize="20sp"
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/txvcolaborar"
                         android:layout_height="wrap_content"
-                        android:text="Rescate" />
+                        android:text="Talleres Comunitarios" />
 
-                    <CheckBox android:id="@+id/checkbox_donacion"
-                        android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/checkbox_instructor"
+                        android:layout_width="fill_parent"
                         android:textColor="#757575"
+                        android:textSize="20sp"
                         android:layout_marginTop="10dp"
-                        android:layout_below="@+id/txvcolaborar"
-                        android:layout_toRightOf="@+id/checkbox_rescate"
+                        android:layout_below="@+id/checkbox_taller"
+                        android:layout_height="wrap_content"
+                        android:text="Instructor Voluntario" />
+
+                    <CheckBox android:id="@+id/checkbox_donaciones"
+                        android:layout_width="fill_parent"
+                        android:textColor="#757575"
+                        android:textSize="20sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/checkbox_instructor"
                         android:layout_height="wrap_content"
                         android:text="Donaciones" />
 
-                    <CheckBox android:id="@+id/checkbox_organizacion"
-                        android:layout_width="wrap_content"
-                        android:textColor="#757575"
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/txvcolaborar"
-                        android:layout_toRightOf="@+id/checkbox_donacion"
-                        android:layout_height="wrap_content"
-                        android:text="Organización" />
+                <CheckBox android:id="@+id/checkbox_aprender"
+                    android:layout_width="fill_parent"
+                    android:textColor="#757575"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:layout_below="@+id/checkbox_donaciones"
+                    android:layout_height="wrap_content"
+                    android:text="Aprender sobre evaluaciones de daño" />
 
                     <Button
                         android:id="@+id/registro"
@@ -241,7 +253,7 @@ android:paddingBottom="@dimen/activity_vertical_margin">
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="#3E82B6"
-                        android:layout_below="@+id/checkbox_organizacion"
+                        android:layout_below="@+id/checkbox_aprender"
                         android:gravity="center"/>
             </RelativeLayout>
 
