@@ -1,7 +1,6 @@
-package pa.resilienciacomunitaria.org.wordvision;
+package pa.resilienciacomunitaria.org.worldvision;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

@@ -1,4 +1,4 @@
-package pa.resilienciacomunitaria.org.wordvision;
+package pa.resilienciacomunitaria.org.worldvision;
 
 
 import android.content.Intent;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class TwoFragment extends Fragment {

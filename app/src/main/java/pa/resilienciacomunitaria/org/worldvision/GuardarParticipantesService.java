@@ -1,15 +1,11 @@
-package pa.resilienciacomunitaria.org.wordvision;
+package pa.resilienciacomunitaria.org.worldvision;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

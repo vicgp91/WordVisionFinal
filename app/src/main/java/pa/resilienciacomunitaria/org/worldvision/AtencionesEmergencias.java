@@ -1,7 +1,4 @@
-package pa.resilienciacomunitaria.org.wordvision;
-
-import android.os.Parcel;
-import android.os.Parcelable;
+package pa.resilienciacomunitaria.org.worldvision;
 
 /**
  * Created by LogicStudio on 25/2/16.

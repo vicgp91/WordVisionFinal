@@ -1,4 +1,4 @@
-package pa.resilienciacomunitaria.org.wordvision;
+package pa.resilienciacomunitaria.org.worldvision;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

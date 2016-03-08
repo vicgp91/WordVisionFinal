@@ -1,4 +1,4 @@
-package pa.resilienciacomunitaria.org.wordvision;
+package pa.resilienciacomunitaria.org.worldvision;
 
 /**
  * Created by LogicStudio on 1/3/16.

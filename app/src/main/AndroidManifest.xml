@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pa.resilienciacomunitaria.org.wordvision" >
+    package="pa.resilienciacomunitaria.org.worldvision" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,7 +15,7 @@
 
         <!--android:screenOrientation="portrait"-->
         <activity
-            android:name=".MainActivity"
+            android:name="pa.resilienciacomunitaria.org.worldvision.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             >
@@ -26,9 +26,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VerPrimerosAuxilios"
+            android:name="pa.resilienciacomunitaria.org.worldvision.VerPrimerosAuxilios"
             android:label="@string/title_activity_ver_primeros_auxilios"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="pa.resilienciacomunitaria.org.worldvision.MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.v4.PARENT_ACTIVITY"
@@ -36,28 +36,28 @@
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".VerInfoPrimerosAuxilios"
+            android:name="pa.resilienciacomunitaria.org.worldvision.VerInfoPrimerosAuxilios"
             android:label="@string/title_activity_ver_info_primeros_auxilios"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName="pa.resilienciacomunitaria.org.worldvision.MainActivity" >
             <meta-data
                 android:name="android.support.v4.PARENT_ACTIVITY"
                 android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="pa.resilienciacomunitaria.org.worldvision.SplashScreenActivity"
             android:label="@string/title_activity_splash_screen" >
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".InscribiseActivity"
+            android:name="pa.resilienciacomunitaria.org.worldvision.InscribiseActivity"
             android:label="@string/title_activity_inscribise"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName="pa.resilienciacomunitaria.org.worldvision.MainActivity" >
             <meta-data
                 android:name="android.support.v4.PARENT_ACTIVITY"
                 android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
 
-        <service android:name=".GuardarParticipantesService">
+        <service android:name="pa.resilienciacomunitaria.org.worldvision.GuardarParticipantesService">
 
 
         </service>

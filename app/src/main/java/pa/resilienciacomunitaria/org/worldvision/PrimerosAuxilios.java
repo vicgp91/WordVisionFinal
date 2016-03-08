@@ -1,7 +1,6 @@
-package pa.resilienciacomunitaria.org.wordvision;
+package pa.resilienciacomunitaria.org.worldvision;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PrimerosAuxilios {
 
