@@ -275,6 +275,67 @@ public class TwoFragment extends Fragment {
         ayudaPsicologica.add(new AtencionesEmergencias(R.drawable.ayuda_psicologica4, psicologico4, "", preguntaPap));
 
         //-------------------------------------Manejo de emergencias-----------------------------------------------------------------
+
+        String manejo1="Es una heramienta de gestion estandarizada para atender5 las demandas en situaciones de emergencias y/o de no emergencia.\n" +
+                "- Representa las mejores prácticas del en el tema y ha sido adoptada como el estandar para la gestión de las emergencias en forma global.\n" +
+                "- Puede ser usada para planificar eventos, desastres naturales y actos de terrorismo.\n" +
+                "\n" +
+                "\n¿DÓNDE PUEDO APLICAR?\n" +
+                "El sistema de manejo de emergancia busca que bomberos estructurales, forestales, aeronauticos, policia y otros grupos trabajen bajo un mismo sistema, empleando la misma terminología común con una organización definida y regida por procedimientos estandarizados.\n" +
+                "En la medida en que las  instituciones aplican estos procedimientos estandarizados en la atención de incidentes cotidianos, pequeños y faciles de solucionar; mejoran su preparacion para trabajar con el sistema el en incidentes de gran magnitud. El SCI  se puede aplicar en:\n" +
+                "- Derrumbes, explociones, inundacions, terremotos, huracanes, erupciones volcanicas y tornados.\n" +
+                "- Incendios forestales, estructurales, industriales y aeronauticos.\n" +
+                "- Accidentes de transporte aéreo, ferroviario, acuatico o terrestre.\n" +
+                "- Accidentes domésticos, vehiculares e industriales.\n" +
+                "- Misiones de busqueda y operaciones de rescate.\n" +
+                "- Icidentes con materiales peligosos.\n" +
+                "- tRespuesta a derrames de petróleo.\n" +
+                "- tEventos planificados ejemplo. Desfiles, celebraciones, conciertos, plazas públicas.\n";
+
+
+        String manejo2="PRINCIPOS DEL SISTEMA DE MANEJO DE EMERGENCIAS.\n" +
+                "El SCI se basa en principios que permiten asegurar el despliegue rápido, coordinado y efectivo de los recursos y minimizar la alteración de las políticas y procedimientos operativos propio de cada una de las instituciones que espondes\n" +
+                "Esos principios son:\n" +
+                "- Terminología común.\n" +
+                "- Alcance de control.\n" +
+                "- Organización modular.\n" +
+                "- Comunicaciones integradas.\n" +
+                "- Consolidacion de planes en un plan de acción del incidente (PAI).\n" +
+                "- Unidad de mano.\n" +
+                "- Comando unificado.\n" +
+                "- Instalaciones con ubicación determinada y denominación precisa.\n" +
+                "- Manejo integral de los recursos.\n" +
+                "\n" +
+                "\nESTRUCTURA Y FUNCIONES DEL SISTEMA\n" +
+                "Cuando en un sistema se necesita el esfuerzo de diferentes instituciones, cualquiera sea la magitud o " +
+                "complegidad del mismo o el número de instituciones participantes, se requiere un trabajo coordinado para " +
+                "asegurar una respuesta efectiva mediante el uso eficiente y seguro de los recursos.\n";
+
+        String manejo3="\nEL SISTEMA DE MANEJO DE EMERGANCIAS ESTA BASADO EN OCHO (8) FUNCIONES:\n" +
+                "- Mando\n" +
+                "- Planificación\n" +
+                "- Operaciones }logística\n" +
+                "- Administracion y finanzas \n" +
+                "- Seguridad \n" +
+                "- Informacion pública\n" +
+                "- Enlace\n" +
+                "\n" +
+                "\nManejo por objetivos\n" +
+                "En el manejo de incidentes, los objetivos respecto a las siguientes prioridaes:\n" +
+                "- Salvamento de vidas.\n" +
+                "- Estabilización de incidentes.\n" +
+                "- Reservacion de la prioridad.\n" +
+                "\n" +
+                "\nEstablecimiento y transferencias del comando\n" +
+                "La función del comando debe establecerse claramente al comienzo de las operaciones de respuestas al incidente. Cuando el comando es " +
+                "transferido de una organización o persona a otra, la transferencia debe incluir un periodo de trancisión donde habrá una superposición para garantizar que la tranferencia se dé sin inconvenientes y que no se pierda información importate al realizar el cambio.\n" +
+                "\n" +
+                "La tranferencia del comand se da cuando:\n" +
+                "- Una persona mas calificada asume el mando.\n" +
+                "- La situacion del incidente cambia con el tiempo y en consecuencia la ley exige el cambio de comando.\n" +
+                "- Hay una cambio normal de personal en incidentes prolongados.\n" +
+                "- La respuesta al incidente concluye y la responsabilidad es tranferida al organismo de origen. \n";
+
         String manejo4="DESPLIEGUE" +
                 "\nEl personal Y el equipo deben responder solo cuando lo solicite o lo disponga la autoridad correspondiente." +
                 "Evadir los procedimientos establecidos de despliegue solo genera más confusión." +
@@ -286,36 +347,39 @@ public class TwoFragment extends Fragment {
                 "al manejo de emergencias, los funcionaros del gobierno y otros trabajadores de respuestas designados." +
                 "\nFORMACIÓN DE EQUIPOS" +
                 "\nHaz que cada miembro del equipo exponga sus habilidades y experiencias luego. \n" +
-                " \tElija la posición de ICS para la que estén más calificados.\n" +
-                " \tCada persona del equipo debe cubrir al menos una posición de ICS.\n" +
-                " \tUna vez hallas elegido a una persona para cubrir cada rol, haz que pongan frente a ellos “el identificador de posiciones ICS”\n" +
-                "DESCRIPCIÓN DE LAS FUNCIONES: COMANDO DE INCIDENTES \n" +
-                " \tEstablece objetivos, estrategias y prioridades en el incidente.\n" +
-                " \tAsume toda la responsabilidad por el incidente.\n" +
+                "- Elija la posición de ICS para la que estén más calificados.\n" +
+                "- Cada persona del equipo debe cubrir al menos una posición de ICS.\n" +
+                "- Una vez hallas elegido a una persona para cubrir cada rol, haz que pongan frente a ellos “el identificador de posiciones ICS”\n" +
+                "\nDESCRIPCIÓN DE LAS FUNCIONES: COMANDO DE INCIDENTES \n" +
+                "- Establece objetivos, estrategias y prioridades en el incidente.\n" +
+                "- Asume toda la responsabilidad por el incidente.\n" +
                 "\n" +
-                "Operaciones\n" +
-                " \tDefine tácticas y recursos para alcanzar los objetivos.\n" +
-                " \tDirige la respuesta táctica “alimentación”, atención médica, remoción de escombros, etc.\n" +
-                "Planificación\n" +
-                " \tRecolecta, analiza y evalúa información.\n" +
-                " \tGestiona recursos, decide las necesidades para la alimentación y distribución masiva.\n" +
-                " \tMantiene la documentación “registro”\n" +
+                "\nOperaciones\n" +
+                "- Define tácticas y recursos para alcanzar los objetivos.\n" +
+                "- Dirige la respuesta táctica “alimentación”, atención médica, remoción de escombros, etc.\n" +
+                "\nPlanificación\n" +
+                "- Recolecta, analiza y evalúa información.\n" +
+                "- Gestiona recursos, decide las necesidades para la alimentación y distribución masiva.\n" +
+                "- Mantiene la documentación “registro”\n" +
                 "\n" +
-                " Logística \n" +
-                " \tProvee recursos y servicios necesarios (PODS), servicios necesarios, alimentos.\n" +
-                "Financiero administrativo\n";
+                "\nLogística \n" +
+                "- Provee recursos y servicios necesarios (PODS), servicios necesarios, alimentos.\n" +
+                "\nFinanciero administrativo\n";
 
 
         ArrayList<Respuestas>  respuestasComandos= new ArrayList<Respuestas>();
-        respuestasPap.add(new Respuestas("Seguridad.", true));
-        respuestasPap.add(new Respuestas("Ingresos.", false));
-        respuestasPap.add(new Respuestas("Salud.", true));
+        respuestasComandos.add(new Respuestas("Seguridad.", true));
+        respuestasComandos.add(new Respuestas("Ingresos.", false));
+        respuestasComandos.add(new Respuestas("Salud.", false));
 
 
-        Preguntas preguntaComando = new Preguntas("Una función del sistema de manejo de emergencias.", respuestasPap);
+        Preguntas preguntaComando = new Preguntas("Una función del sistema de manejo de emergencias.", respuestasComandos);
 
         ArrayList<AtencionesEmergencias>  comandosEmergencias = new ArrayList<AtencionesEmergencias>();
-        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,psicologico1, "Manejo de Emergencias", preguntaPap));
+        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,manejo1, "Manejo de Emergencias", preguntaComando));
+        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,manejo2, "", preguntaComando));
+        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,manejo3, "", preguntaComando));
+        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,manejo4, "", preguntaComando));
 
 //------------------------------------------------------------------------------------------------------------------------------------
 
