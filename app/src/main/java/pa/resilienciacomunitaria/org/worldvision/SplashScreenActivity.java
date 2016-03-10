@@ -2,6 +2,7 @@ package pa.resilienciacomunitaria.org.worldvision;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,36 +13,23 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SplashScreenActivity extends AppCompatActivity {
-    private static final long SPLASH_SCREEN_DELAY = 3000;
+
+    private final int SPLASH_DISPLAY_LENGTH = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        // Hide title bar
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash_screen);
 
-        TimerTask task = new TimerTask() {
+
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                // Start the next activity
-                Intent mainIntent = new Intent().setClass(
-                        SplashScreenActivity.this, MainActivity.class);
-                startActivity(mainIntent);
-
-                // Close the activity so the user won't able to go back this
-                // activity pressing Back button
-                finish();
+                Intent mainIntent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                SplashScreenActivity.this.startActivity(mainIntent);
+                SplashScreenActivity.this.finish();
             }
-        };
-
-        // Simulate a long loading process on application startup.
-        Timer timer = new Timer();
-        timer.schedule(task, SPLASH_SCREEN_DELAY);
+        }, SPLASH_DISPLAY_LENGTH);
     }
 
 
