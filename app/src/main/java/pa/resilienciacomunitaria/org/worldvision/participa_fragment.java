@@ -35,7 +35,7 @@ public class participa_fragment extends Fragment {
         imagen2 = (ImageView) rootView.findViewById(R.id.imagen2);
 
 
-        imagen1.setImageResource(R.drawable.wv_logo);
+        imagen1.setImageResource(R.drawable.causes_world_vision);
         imagen2.setImageResource(R.drawable.rescate);
         titulo.setText("Bienvenido, Bienvenida!");
         contenido.setText("Aquí aprenderas de las guias técnicas de rescate, completalas todas :)" +
