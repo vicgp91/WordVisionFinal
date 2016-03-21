@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new participa_fragment(), "Participa");
         adapter.addFrag(new TwoFragment(), "Guías");
         adapter.addFrag(new OneFragment(), "Teléfonos");
-        adapter.addFrag(new ThreeFragment(), "Word Vision");
+        adapter.addFrag(new ThreeFragment(), "World Vision");
         viewPager.setAdapter(adapter);
     }
 
