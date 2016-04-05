@@ -1,13 +1,16 @@
 package pa.resilienciacomunitaria.org.worldvision;
 
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +19,7 @@ public class ThreeFragment extends Fragment {
     View rootView;
     private TextView titulo, contenido;
     ImageView imagen;
-    Button irUrl;
+    ImageButton irFacebook, irTwitter;
 
 
     public ThreeFragment() {
@@ -35,7 +38,8 @@ public class ThreeFragment extends Fragment {
 
         rootView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
-        //irUrl = (Button) rootView.findViewById(R.id.url);
+        irFacebook = (ImageButton) rootView.findViewById(R.id.urlfacebook);
+        irTwitter = (ImageButton) rootView.findViewById(R.id.urltwitter);
 
         /*titulo.setText("Compartir");
         contenido.setText("Compartir");
@@ -47,11 +51,11 @@ public class ThreeFragment extends Fragment {
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
-        });
+        });*/
 
         rootView.findViewById(R.id.urlfacebook).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.facebook.com/resilienciacomunitaria?ref=hl");
+                Uri uri = Uri.parse("https://www.facebook.com/WorldVisionLAC");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -59,14 +63,11 @@ public class ThreeFragment extends Fragment {
 
         rootView.findViewById(R.id.urltwitter).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://twitter.com/resilienciero");
+                Uri uri = Uri.parse("https://twitter.com/WorldVisionLAC");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
-        });*/
-
-
-
+        });
 
 
         return rootView;

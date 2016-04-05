@@ -22,7 +22,7 @@
         android:layout_alignParentTop="true"
         android:paddingLeft="16dp"
         android:layout_marginTop="20dp"
-        android:textSize="23sp"
+        android:textSize="22sp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/imgAux"
@@ -33,8 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-      android:paddingLeft="16dp"
-        android:textColor="@android:color/black"
+        android:paddingLeft="16dp"
         android:layout_below="@+id/tvTituloAux"
         android:layout_toRightOf="@+id/imgAux"
         android:layout_toEndOf="@+id/imgAux" />

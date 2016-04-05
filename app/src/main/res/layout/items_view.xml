@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_toRightOf="@+id/imgInstitucion"
@@ -30,7 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@android:color/black"
         android:layout_below="@+id/tvTitulo"
         android:layout_toRightOf="@+id/imgInstitucion"
         android:layout_toEndOf="@+id/imgInstitucion" />
@@ -40,7 +39,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@android:color/black"
         android:layout_below="@+id/tvContenido"
         android:layout_alignLeft="@+id/tvContenido"
         android:layout_alignStart="@+id/tvContenido" />

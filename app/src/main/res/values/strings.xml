@@ -25,7 +25,7 @@
     <string name="ubicacion">Edificio 223, Local B y C, 2do. Piso Clayton, City of Knowledge, Clayton, Panama
     </string>
 
-    <string name="webUrl">http://www.wvi.org</string>
+    <string name="webUrl">www.worldvisionamericalatina.org</string>
 
     <string-array name="pais_array">
             <item>Bolivia</item>

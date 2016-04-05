@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -46,7 +48,9 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
 
-    public TextView nombre, siguiente, anterior;
+    public TextView nombre; //siguiente, anterior;
+
+    Button siguiente, anterior;
     public TextView visitas;
     private Toolbar toolbarCard;
     private ArrayList<AtencionesEmergencias> listEmergencia;
@@ -88,11 +92,16 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         // recycler.setAdapter(adapter);
         nombre = (TextView) findViewById(R.id.nombre);
         toolbarCard = (Toolbar) findViewById(R.id.toolbarCard);
-        siguiente = (TextView) findViewById(R.id.siguiente);
-        anterior = (TextView) findViewById(R.id.anterior);
+       // siguiente = (TextView) findViewById(R.id.siguiente);
+       // anterior = (TextView) findViewById(R.id.anterior);
+        siguiente=(Button) findViewById(R.id.siguiente);
+        anterior = (Button) findViewById(R.id.anterior);
+
         imagen=(ImageView)findViewById(R.id.imagen);
 
-        nombre.setText(listEmergencia.get(0).getDescripcion());
+
+        nombre.setText(Html.fromHtml(listEmergencia.get(0).getDescripcion()));
+        nombre.setMovementMethod(LinkMovementMethod.getInstance());
         toolbarCard.setTitle(listEmergencia.get(0).getTitulo());
         imagen.setImageResource(listEmergencia.get(0).getImagen());
         toolbarCard.setSubtitle("Parte 1/" + String.valueOf(listEmergencia.size()));
@@ -166,7 +175,11 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                 siguiente.setText("Quiz!");
             }
 
-            nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
+            //nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
+
+            nombre.setText(Html.fromHtml(listEmergencia.get(posicionPagina - 1).getDescripcion()));
+            nombre.setMovementMethod(LinkMovementMethod.getInstance());
+
             imagen.setImageResource(listEmergencia.get(posicionPagina - 1).getImagen());
             toolbarCard.setTitle(listEmergencia.get(posicionPagina - 1).getTitulo());
             toolbarCard.setSubtitle("Parte " + String.valueOf(posicionPagina) + "/" + String.valueOf(listEmergencia.size()));
@@ -240,7 +253,9 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
             }
 
             if (posicionPagina>0){
-                nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
+                //nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
+                nombre.setText(Html.fromHtml(listEmergencia.get(posicionPagina - 1).getDescripcion()));
+                nombre.setMovementMethod(LinkMovementMethod.getInstance());
                 imagen.setImageResource(listEmergencia.get(posicionPagina - 1).getImagen());
                 toolbarCard.setTitle(listEmergencia.get(posicionPagina - 1).getTitulo());
                 toolbarCard.setSubtitle("Parte " + String.valueOf(posicionPagina) + "/" + String.valueOf(listEmergencia.size()));

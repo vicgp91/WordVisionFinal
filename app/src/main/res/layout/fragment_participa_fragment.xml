@@ -41,13 +41,13 @@
                     android:layout_weight="1"
                 />
 
-                <ImageView
+               <!-- <ImageView
                     android:id="@+id/imagen2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:adjustViewBounds="true"
-                    />
+                    />-->
 
                 <TextView
                     android:id="@+id/titulo"
@@ -55,36 +55,47 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:layout_marginTop="16dp"
+                    android:layout_marginLeft="15dp"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/contenido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="16dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="23sp" />
+                    android:textSize="18sp" />
 
 
                 <Button
                     android:id="@+id/btninscribirse"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="Inscribirse"
+                    android:text="¡Quiero ser voluntario!"
                     android:textColor="#FFF8E1"
                     android:elevation="50dp"
                     android:background="#3E82B6"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="16dp"
-                    android:textSize="23sp"
+                    android:textSize="18sp"
 
                     />
+
+
+                <TextView
+                    android:id="@+id/apoyo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="18sp" />
 
 
                 <TextView

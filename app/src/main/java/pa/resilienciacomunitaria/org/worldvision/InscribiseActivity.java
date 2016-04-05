@@ -100,6 +100,8 @@ public class InscribiseActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPais.setAdapter(adapter);
         spinnerPais.setHint("Escoja un País");
+        spinnerPais.setSelection(14);
+
 
         ArrayAdapter<CharSequence> adapterGEnero = ArrayAdapter.createFromResource(this,
                 R.array.genero_array, android.R.layout.simple_spinner_item);
@@ -269,6 +271,10 @@ public class InscribiseActivity extends AppCompatActivity {
                             txvEdad.setText("");
                             txvEmail.setText("");
                             txvTelefono.setText("");
+                            checkbox_taller.setChecked(false);
+                            checkbox_instructor.setChecked(false);
+                            checkbox_donaciones.setChecked(false);
+                            checkbox_aprender.setChecked(false);
                             dialog.cancel();
 
                         }
@@ -324,7 +330,7 @@ public class InscribiseActivity extends AppCompatActivity {
 
     private boolean validaTelefono() {
         if (txvTelefono.getText().toString().trim().isEmpty()) {
-            txvTelefono.setError("Introduce un múmero teléfono");
+            txvTelefono.setError("Introduce un número teléfono");
             requestFocus(txvTelefono);
             return false;
         } else {
@@ -358,7 +364,7 @@ public class InscribiseActivity extends AppCompatActivity {
             requestFocus(txvEmail);
             return false;
         } else if(!matcher.matches()){
-            txvEmail.setError("Dirección de email iválido");
+            txvEmail.setError("Dirección de email inválido");
             requestFocus(txvEmail);
             return false;
         }
