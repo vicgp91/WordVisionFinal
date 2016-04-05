@@ -193,6 +193,7 @@ public class InscribiseActivity extends AppCompatActivity {
 
 
             if(tieneRed) {
+
                 URL url = new URL("https://docs.google.com/forms/d/17jL6w5SjeFcKlePNoV09u25IFBDVdV__LGbLpIjP7OY/formResponse");
                 HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
                 conn.setReadTimeout(10000);
