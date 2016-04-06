@@ -151,12 +151,15 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
         final  Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.prueba);
-        dialog.setTitle(listEmergencia.get(0).getPreguntas().getPregunta());
+        //dialog.setTitle(listEmergencia.get(0).getPreguntas().getPregunta());
+        dialog.setTitle("");
         dialog.setCancelable(true);
 
         final   RadioButton rd1 = (RadioButton) dialog.findViewById(R.id.rd_1);
         final   RadioButton rd2 = (RadioButton) dialog.findViewById(R.id.rd_2);
         final   RadioButton rd3 = (RadioButton) dialog.findViewById(R.id.rd_3);
+        final   TextView pregunta = (TextView) dialog.findViewById(R.id.pregunta);
+        pregunta.setText(listEmergencia.get(0).getPreguntas().getPregunta());
 
 
         posicionPagina = posicionPagina + 1;
@@ -187,6 +190,7 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         }
         if(siguiente.getText().equals("Quiz!") && posicionPagina > listEmergencia.size()){
             posicionPagina = posicionPagina -1;
+
             rd1.setText(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).respuesta);
             rd2.setText(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).respuesta);
             rd3.setText(listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).respuesta);
@@ -264,15 +268,7 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                 anterior.setVisibility(view.INVISIBLE);
             }
 
-
         }
-
-
-
-
-
-
-
     }
 
 

@@ -394,11 +394,11 @@ public class TwoFragment extends Fragment {
 //------------------------------------------------------------------------------------------------------------------------------------
 
 
-        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de una fractura ","Atencion de Fracturas", R.drawable.fracturalist, fractura));
-        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de una hemorragia", "Atencion Hemorrágias", R.drawable.hemorragialist, hemorrageas));
-        primerosAuxilios.add(new PrimerosAuxilios("Que puedes hacer al momento de sufrir una herida", "Atención de Heridas", R.drawable.heridas_icon, heridas));
-        primerosAuxilios.add(new PrimerosAuxilios("Cómo debes actuar durante una emergencia", "Primeros Auxilios Psicológicos ", R.drawable.inmo_icon, ayudaPsicologica));
-        primerosAuxilios.add(new PrimerosAuxilios("Cómo debes actuar durante una emergencia", "Sistema de Manejo de Emergencias", R.drawable.manejo, comandosEmergencias));
+        primerosAuxilios.add(new PrimerosAuxilios("¿Qué puedes hacer al momento de una fractura?","Atención de Fracturas", R.drawable.fracturalist, fractura));
+        primerosAuxilios.add(new PrimerosAuxilios("¿Qué puedes hacer al momento de una hemorragia?", "Atención Hemorrágias", R.drawable.hemorragialist, hemorrageas));
+        primerosAuxilios.add(new PrimerosAuxilios("¿Qué puedes hacer al momento de sufrir una herida?", "Atención de Heridas", R.drawable.heridas_icon, heridas));
+        primerosAuxilios.add(new PrimerosAuxilios("¿Cómo debes actuar durante una emergencia?", "Primeros Auxilios Psicológicos ", R.drawable.inmo_icon, ayudaPsicologica));
+        primerosAuxilios.add(new PrimerosAuxilios("¿Cómo debes actuar durante una emergencia?", "Sistema de Manejo de Emergencias", R.drawable.manejo, comandosEmergencias));
     }
 
 

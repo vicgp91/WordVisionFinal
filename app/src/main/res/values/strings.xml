@@ -9,7 +9,7 @@
     </string>
 
     <string name="contenido"></string>
-    <string name="title_activity_ver_info_primeros_auxilios"></string>
+    <string name="title_activity_ver_info_primeros_auxilios">Guías Prácticas</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_ver_mas_detalle_emeregencia">VerMasDetalleEmeregencia</string>

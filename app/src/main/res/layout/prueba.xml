@@ -5,9 +5,25 @@
     tools:context="pa.resilienciacomunitaria.org.worldvision.VerInfoPrimerosAuxilios">
 
 
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pregunta"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Pregunta"
+        android:divider="#3E82B6"
+        android:textSize="22sp" />
+
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/pregunta"
         android:id="@+id/rdGroup">
 
     <RadioButton
@@ -18,7 +34,7 @@
         android:layout_marginTop="10dp"
         android:divider="#7F7F7F"
         android:dividerHeight="2dp"
-        android:textSize="23sp"/>
+        android:textSize="18sp"/>
 
     <RadioButton
         android:id="@+id/rd_2"
@@ -29,7 +45,7 @@
         android:layout_marginTop="10dp"
         android:dividerHeight="2dp"
         android:text="B"
-        android:textSize="23sp"/>
+        android:textSize="18sp"/>
 
 
     <RadioButton
@@ -41,23 +57,36 @@
         android:layout_marginTop="10dp"
         android:divider="#7F7F7F"
         android:dividerHeight="2dp"
-        android:textSize="23sp"/>
+        android:textSize="18sp"/>
 
 
     </RadioGroup>
     <Button
         android:id="@+id/btnValidaRespuesta"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rdGroup"
         android:layout_marginTop="10dp"
-        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:elevation="120dp"
+        android:background="#3E82B6"
         android:text="Responder" />
     <Button
         android:id="@+id/btnSalir"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnValidaRespuesta"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/rdGroup"
+        android:elevation="120dp"
+        android:layout_toRightOf="@+id/btnValidaRespuesta"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#FFFFFF"
+        android:background="#3E82B6"
         android:text="Cancelar" />
 </RelativeLayout>
