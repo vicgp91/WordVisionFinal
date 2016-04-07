@@ -164,100 +164,6 @@ public class TwoFragment extends Fragment {
         resiliencia.add(new AtencionesEmergencias(R.drawable.resiliencia, contenidoResiliencia3, "¿Dónde se aplica?", preguntaResiliencia));
 
 
-
-
-//----------------------------Contenido Fractura---------------------------------------------------------------------
-        String contenidoFractura1="<br><br>Es la ruptura parcial o total de un hueso, causadas por factores externos o internos como enfermedades propias de los huesos." +
-
-                "<br><b>&#8226; Agentes externos: </b>Son provocados por trauma, fuerza desproporcionada, movimiento desmedido que ocasionan esguinces, fracturas y luxaciones.\n" +
-                "<br><b>&#8226; Agentes Internos</b>: Enfermedades que afectan el sistema óseo; ejemplo: Osteoporosis, leucemia y cáncer de huesos" +
-                "<br><br><b>Signos y Síntomas de Fracturas:</b><br>" +
-                "&#8226; Deformidad.<br> " +
-                "&#8226; Inflamación.<br> " +
-                "&#8226; Incapacidad de movimiento.<br> " +
-                "&#8226; Aumento o acortamiento del miembro.<br>" +
-                "&#8226; Área lesionada  entumecida y fría.<br> " +
-                "&#8226; La piel tiene un color Azul." +
-                "<br><br><b>Primeros auxilios para fracturas</b>"+
-                "<br><br>Los huesos y articulaciones fracturadas o lesionadas deben ser inmovilizados  para que de esta forma puedan prevenir mayores lesiones y disminuir  el dolor." +
-                "<br><br><b>En la atención de estas lesiones se utilizan:</b> férulas, vendas de rollo y vendas triangulares.";
-
-        String contenidoFractura4="<br><br>Un entablillado puede ser preparado comercialmente o improvisado. También  es posible utilizar una parte del cuerpo que no se encuentre lesionada, por  ejemplo: La otra pierna o el costado del cuerpo.";
-
-        String contenidoFractura5="" +
-                "<br><br>&#8226; No haga nada que le cause más dolor a la persona.<br>" +
-                "&#8226; Inmovilice el área lesionada en posición de mayor comodidad.<br>" +
-                "&#8226; Examine la circulación distal antes y después de la inmovilización.<br>" +
-                "&#8226; Tranquilizar a la persona afectada.<br>" +
-                "&#8226; Visualizar la fractura y estabilizar manualmente.<br>" +
-                "&#8226; Seleccionar el material de inmovilización adecuado.<br>";
-
-        ArrayList<Respuestas>  respuestaFractura = new ArrayList<Respuestas>();
-        respuestaFractura.add(new Respuestas("Perdida de visión", false));
-        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
-        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
-
-
-        Preguntas preguntaFractura = new Preguntas("Síntomas de una fractura", respuestaFractura);
-
-        ArrayList<AtencionesEmergencias>  fractura = new ArrayList<AtencionesEmergencias>();
-        fractura.add(new AtencionesEmergencias(R.drawable.fractura1, contenidoFractura1, "Fracturas", preguntaFractura));
-        fractura.add(new AtencionesEmergencias(R.drawable.inmobilizacioninfo1, contenidoFractura4, "Inmobilización", preguntaFractura));
-        fractura.add(new AtencionesEmergencias(R.drawable.inmobilizacioninfo2, contenidoFractura5, "¿Qué hacer?", preguntaFractura));
-//------------------------------------------HEmorragia-------------------------------------------------------------------------
-        String hemorragea1="<br><br>Es la pérdida abundante de sangre al romperse un vaso sanguíneo" +
-                "<br><br><b>Tipos de hemorragias: </b><br>" +
-                "&#8226; Hemorragia Arterial: Sangre de color rojo que sale de forma intermitente coincidiendo con los latidos del corazón.<br>" +
-                "&#8226; Hemorragias Venosas: Sangre de color oscuro y que sale de forma continua.<br>" +
-                "&#8226; Hemorragia Capilar: Sangrado de color  rojo que sale de forma lenta.<br>" +
-
-                "<br><br><b>Clasificación  de las Hemorragias: </b><br>" +
-                "&#8226; Hemorragia Externa: Se acompaña de una herida en la piel y se observa salida de sangre hacia afuera.<br>" +
-                "&#8226; Hemorragia Interna: El sangrado es interno. Este sangrado puede salir por los orificios naturales del cuerpo, convirtiéndose  en hemorragia  exteriorizada.<br>";
-
-        String hemorragia2="<br><br>&#8226; <b>Haga  presión directa:</b> Use guantes y ejerza presión sobre la herida.<br>" +
-                "&#8226; <b>Elevación:</b> Elevar las extremidades afectadas (piernas o brazos), para aminorar la salida de sangre al sitio de la herida. Si no existen fracturas u objetos ensartados  se elevan las extremidades afectadas a un nivel más alto que el del corazón.<br>" +
-                "&#8226; <b>Presión Indirecta:</b> Usando la yema de los dedos, la palma de la mano, se apretará en el sitio afectado donde podamos prensar la arteria por donde sale la sangre contra el hueso, a fin de evitar el paso de la sangre.<br>";
-
-
-        ArrayList<Respuestas>  respuestaHemorragia = new ArrayList<Respuestas>();
-        respuestaFractura.add(new Respuestas("Perdida de visión", false));
-        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
-        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
-
-
-        Preguntas preguntaHemorragia = new Preguntas("Síntomas de una fractura", respuestaFractura);
-
-        ArrayList<AtencionesEmergencias>  hemorrageas = new ArrayList<AtencionesEmergencias>();
-        hemorrageas.add(new AtencionesEmergencias(R.drawable.heridas1info, hemorragea1, "Hemorragias", preguntaHemorragia));
-        hemorrageas.add(new AtencionesEmergencias(R.drawable.heridas2info, hemorragia2, "Primeros Auxilios para hemorragias", preguntaHemorragia));
-
-//---------------------------------HEridas------------------------------------------------------------------------
-
-
-        String herida1="<br><br>Es la separación de los tejidos de la piel, que puede dejar al descubierto otras partes del cuerpo como los huesos y otros órganos del ser humano que se encuentran internamente.";
-        String herida2="<br><br>" +
-                "&#8226; <b>Cortantes :</b> Bordes rectilíneos (cuchillo, gillette, navaja).<br>" +
-                "&#8226; <b>Lacerantes :</b> Bordes irregulares (latón, sierra, vidrio).<br>" +
-                "&#8226; <b>Punzantes:</b> Orificio a veces con salida (punzón, clavos, agujas).<br>" +
-                "&#8226; <b>Contusas:</b> Golpes fuertes (pedradas, martillazos).<br>" +
-                "&#8226; <b>Corto Punzante:</b> Bordes rectilíneos  y orificio (verruguilla, navaja).<br>" +
-                "&#8226; <b>Avulsiva:</b> Desgarre o pérdida de un miembro o parte del cuerpo.<br><br>";
-
-
-        ArrayList<Respuestas>  respuestaHeridas = new ArrayList<Respuestas>();
-        respuestaFractura.add(new Respuestas("Perdida de visión", false));
-        respuestaFractura.add(new Respuestas("Dolor intenso en el área afectada", true));
-        respuestaFractura.add(new Respuestas("Pérdida de audición", false));
-
-
-        Preguntas preguntaHerida = new Preguntas("Síntomas de una fractura", respuestaFractura);
-
-        ArrayList<AtencionesEmergencias>  heridas = new ArrayList<AtencionesEmergencias>();
-        heridas.add(new AtencionesEmergencias(R.drawable.heridas1info,herida1, "¿Qué es una Herida?", preguntaHerida));
-        heridas.add(new AtencionesEmergencias(R.drawable.heridas2info, herida2, "Los elementos que pueden producir heridas son: ", preguntaHerida));
-
-
         //Primeros auxilios psicologicos.---------------------------------------------------------------------------
 
         String psicologico1="<br><br>Cuando las personas se enfrentan a  crisis severas derivadas de situaciones vinculadas a desastres naturales o " +
@@ -509,8 +415,8 @@ public class TwoFragment extends Fragment {
 
 
  //-----------------------Triage---------------------------------------------------------------------------------------------
-        String contenidoTriage1="<br><br>Triaje procede de la palabra francesa triage que significa cla¬sificar y es el conjunto de procedimientos mediante el cual se hace una revisión y clasificación de víctimas cuando su número excede los recursos disponibles de atención inmediata para establecer prioridades en atención y evacuación. " +
-                "La persona a cargo de triaje debe estar en la capacidad de realizar un recono¬cimiento rápido de los pacientes, tomar decisiones inmediatas y realizar un eti¬quetado ágil y preciso; en la medida de lo posible debe tener experiencia y en¬trenamientos previos para lograr mayor precisión y exactitud." +
+        String contenidoTriage1="<br><br>Triaje procede de la palabra francesa triage que significa clasificar y es el conjunto de procedimientos mediante el cual se hace una revisión y clasificación de víctimas cuando su número excede los recursos disponibles de atención inmediata para establecer prioridades en atención y evacuación. " +
+                "La persona a cargo de triaje debe estar en la capacidad de realizar un reconocimiento rápido de los pacientes, tomar decisiones inmediatas y realizar un etiquetado ágil y preciso; en la medida de lo posible debe tener experiencia y entrenamientos previos para lograr mayor precisión y exactitud." +
 
                 "<br><br><b>Objetivos del triaje.</b>" +
                 "<br>" +
@@ -527,13 +433,68 @@ public class TwoFragment extends Fragment {
                 "<br>&#8226; Preparar la atención al público." +
                 "<br>&#8226; Atención a los familiares." +
 
-                "<br><br>Con la finalidad de hacer más objetivos los sistemas, inter¬nacionalmente se ha adoptado un código de colores que, independientemente del sistema, dividirá a los pacientes en cuatro categorías:" +
+                "<br><br>Con la finalidad de hacer más objetivos los sistemas, internacionalmente se ha adoptado un código de colores que, independientemente del sistema, dividirá a los pacientes en cuatro categorías:" +
                 "<br>&#8226; <b>ROJO: </b>Pacientes que precisan asistencia inmediata y una vez proporcionada son recuperables, es decir, tienen pronóstico aceptable." +
-                "<br>&#8226; <b>AMARILLO: </b>Pacientes que precisan asistencia hos¬pitalaria, pero que se puede esperar para realizar la evacuación. Precisan unos cuidados mínimos pre¬vios a la misma."+
-                "<br>&#8226; <b>VERDE: </b>Pacientes que no precisan asistencia hospi¬talaria médica inmediata, o en todo caso pueden ser trasladados en vehículos no sanitarios. Su aten¬ción puede demorarse más de 6 horas."+
+                "<br>&#8226; <b>AMARILLO: </b>Pacientes que precisan asistencia hospitalaria, pero que se puede esperar para realizar la evacuación. Precisan unos cuidados mínimos previos a la misma."+
+                "<br>&#8226; <b>VERDE: </b>Pacientes que no precisan asistencia hospitalaria médica inmediata, o en todo caso pueden ser trasladados en vehículos no sanitarios. Su atención puede demorarse más de 6 horas."+
                 "<br>&#8226; <b>NEGRO: </b>Este color se utiliza para aquellas personas fallecidas, por lo cual no amerita traslado ni asistencia hospitalaria.";
 
+        String contenidoTriage2="<br><br><b>1- Escena I: </b>Observe atentamente el lugar en donde ocurrió la emergencia, para corroborar que es segura para acercarse y brindar ayuda. " +
+                "Si hay personas cercas del accidente pregunte como sucedió y solicite que llamen a la Cruz Roja y Bomberos." +
+                "<br><br><b>2- Clasificación de personas leves (color verde): </b>Observe atentamente a las personas y oriente que las personas que puedan caminar se alejen del lugar del accidente y se ubiquen en una zona más segura. A estas personas deberá entregarles la tarjeta con la clasificación verde." +
+                "<br><br><b>3- Clasificación de personas heridas leves (color amarillo):  </b>Observe y examine atentamente a las personas y pregunte a cada herido como se llama, sabe que sucedió y como está; esto con el objetivo de valorar su estado de conciencia." +
+                "<br><br><b>Criterios para colocar la tarjeta con la clasificación Amarilla: </b>" +
+                "<br>&#8226; Heridas grandes no hemorrágicas. " +
+                "<br>&#8226; Heridas articulares profundas." +
+                "<br>&#8226; Quemaduras de 2° y 3° entre el 10% y 30%." +
+                "<br>&#8226; Alergias con manifestaciones cutáneas." +
+                "<br>&#8226; Fractura de huesos largos cerradas y huesos cortos abierta." +
+                "<br>&#8226; Luxaciones de gran articulación sin compromiso." +
+                "<br>&#8226; Lesiones en los ojos graves no penetrantes." +
+                "<br>&#8226; Traumatismo torácico y abdominal sin compromisos." +
+                "<br>&#8226; Obedece órdenes sencillas." +
 
+                "<br><br><b>4- Clasificación de personas de atención inmediatas (Roja): </b>Observe y examine atentamente al herido y pregunte como se llama, sabe que sucedió y como está; esto con el objetivo de valorar su estado de conciencia." +
+                "<br><br><b>Criterios para colocar la tarjeta con la clasificación Roja:</b>" +
+                "<br>&#8226; No camina." +
+                "<br>&#8226; Inconsciente." +
+                "<br>&#8226; Heridas grandes hemorrágicas." +
+                "<br>&#8226; Quemaduras de 2° y 3° entre el 31% y 50% en cara y mano." +
+                "<br>&#8226; Fractura de huesos largos abiertas." +
+                "<br>&#8226; Luxaciones de grandes articulaciones con compromiso." +
+                "<br>&#8226; Lesiones en los ojos graves penetrantes." +
+                "<br>&#8226; Hipotermia." +
+                "<br>&#8226; Traumatismos torácicos y abdominales graves." +
+
+                "<br><br><b>5- Clasificación de personas Muertas/ no recuperables (Negra): </b>" +
+                "Observe y examine atentamente al herido y pregunte como se llama, sabe que sucedió y como esta; esto con el objetivo de valorar su estado de conciencia." +
+                "<br><br><b>Criterios para colocar la tarjeta con la clasificación Roja:</b>" +
+                "<br>&#8226; No camina." +
+                "<br>&#8226; No respira." +
+                "<br>&#8226; Alineación de vías áreas sigue sin respirar." +
+                "<br>&#8226; No responde (Muerte).";
+
+        String contenidoTriage3="<br><br><b><h2>Persona ideal para realizar el triaje</h2></b>" +
+                "<br>&#8226; Que sea un facultativo experto en emergencias médicas con gran sentido clínico." +
+                "<br>&#8226; Con formación multidisciplinaria y cualidades persona-les que abarquen desde las dotes de mando a la serenidad, la capacidad de organización y hasta imaginación." +
+                "<br><br><b>Reglas del triaje:</b>" +
+                "<br>&#8226; Rápido." +
+                "<br>&#8226; Completo" +
+                "<br>&#8226; Preciso y seguro." +
+                "<br>&#8226; retrasar atención de victimas que esperan." +
+                "<br>&#8226; No retener a los ya clasificados." +
+                "<br>&#8226; 30 segundos para clasificar un muerto." +
+                "<br>&#8226; 1 min. Para clasificar un herido leve." +
+                "<br>&#8226; Ninguna víctima debe ser evacuada sin ser clasificada" +
+                "<br>&#8226; Ante la duda de clasificar una víctima, hacerlo siempre en la categoría superior." +
+                "<br>&#8226; Excepciones: " +
+                "             - Oscuridad." +
+                "             - Malas condiciones meteorológicas." +
+                "             - Riesgo potencial." +
+                "<br><br><b>Métodos de clasificación.</b>" +
+                "<br>&#8226; METTAG" +
+                "<br>&#8226; S.T.A.R.T" +
+                "<br>&#8226; S.H.O.R.T<br><br>";
 
 
         ArrayList<Respuestas>  respuestasTriage= new ArrayList<Respuestas>();
@@ -542,26 +503,136 @@ public class TwoFragment extends Fragment {
         respuestasComandos.add(new Respuestas("Salud.", false));
 
 
-        Preguntas preguntaTriage = new Preguntas("Una función del sistema de manejo de emergencias.", respuestasComandos);
+        Preguntas preguntaTriage = new Preguntas("Una función del sistema de manejo de emergencias.", respuestasTriage);
 
         ArrayList<AtencionesEmergencias>  triages = new ArrayList<AtencionesEmergencias>();
-        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.imgtriaje1,contenidoTriage1, "Triaje.", preguntaTriage));
-        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1, contenidoTriage1, "", preguntaTriage));
-        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,contenidoTriage1, "", preguntaTriage));
-        comandosEmergencias.add(new AtencionesEmergencias(R.drawable.manejo_emergencia1,contenidoTriage1, "", preguntaTriage));
+        triages.add(new AtencionesEmergencias(R.drawable.imgtriaje1,contenidoTriage1, "Triaje.", preguntaTriage));
+        triages.add(new AtencionesEmergencias(R.drawable.imgtriaje2, contenidoTriage2, "¿Cómo aplicar start?", preguntaTriage));
+        triages.add(new AtencionesEmergencias(R.drawable.imgtriaje3,contenidoTriage3, "", preguntaTriage));
 
-//------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        //-------------------------------Fracturas-Heridas-Hemorragias--------------------------------------------------
+
+        String herida1="<br><br>Es la separación de los tejidos de la piel, que puede dejar al descubierto otras partes del cuerpo como los huesos y otros órganos del ser humano que se encuentran internamente."
+        + "<br><br><b>Elementos que pueden producir una herida</b><br>" +
+                "&#8226; <b>Cortantes :</b> Bordes rectilíneos (cuchillo, gillette, navaja).<br>" +
+                "&#8226; <b>Lacerantes :</b> Bordes irregulares (latón, sierra, vidrio).<br>" +
+                "&#8226; <b>Punzantes:</b> Orificio a veces con salida (punzón, clavos, agujas).<br>" +
+                "&#8226; <b>Contusas:</b> Golpes fuertes (pedradas, martillazos).<br>" +
+                "&#8226; <b>Corto Punzante:</b> Bordes rectilíneos  y orificio (verruguilla, navaja).<br>" +
+                "&#8226; <b>Avulsiva:</b> Desgarre o pérdida de un miembro o parte del cuerpo.<br><br>";
+
+        String hemorragea1="<br><br>Es la pérdida abundante de sangre al romperse un vaso sanguíneo" +
+                "<br><br><b>Tipos de hemorragias: </b><br>" +
+                "&#8226; Hemorragia Arterial: Sangre de color rojo que sale de forma intermitente coincidiendo con los latidos del corazón.<br>" +
+                "&#8226; Hemorragias Venosas: Sangre de color oscuro y que sale de forma continua.<br>" +
+                "&#8226; Hemorragia Capilar: Sangrado de color  rojo que sale de forma lenta.<br>" +
+
+                "<br><br><b>Clasificación  de las Hemorragias: </b><br>" +
+                "&#8226; Hemorragia Externa: Se acompaña de una herida en la piel y se observa salida de sangre hacia afuera.<br>" +
+                "&#8226; Hemorragia Interna: El sangrado es interno. Este sangrado puede salir por los orificios naturales del cuerpo, convirtiéndose  en hemorragia  exteriorizada.<br>"+
+
+                "<br><br><b><h2>Primeros auxilios para hemorragias</h2></b>"+
+                 "<br>&#8226; <b>Haga  presión directa:</b> Use guantes y ejerza presión sobre la herida.<br>" +
+                "&#8226; <b>Elevación:</b> Elevar las extremidades afectadas (piernas o brazos), para aminorar la salida de sangre al sitio de la herida. Si no existen fracturas u objetos ensartados  se elevan las extremidades afectadas a un nivel más alto que el del corazón.<br>" +
+                "&#8226; <b>Presión Indirecta:</b> Usando la yema de los dedos, la palma de la mano, se apretará en el sitio afectado donde podamos prensar la arteria por donde sale la sangre contra el hueso, a fin de evitar el paso de la sangre.<br>";
+
+        String contenidoFractura1="<br><br>Es la ruptura parcial o total de un hueso, causadas por factores externos o internos como enfermedades propias de los huesos." +
+                "<br><b>&#8226; Agentes externos: </b>Son provocados por trauma, fuerza desproporcionada, movimiento desmedido que ocasionan esguinces, fracturas y luxaciones.\n" +
+                "<br><b>&#8226; Agentes Internos</b>: Enfermedades que afectan el sistema óseo; ejemplo: Osteoporosis, leucemia y cáncer de huesos" +
+                "<br><br><b>Signos y Síntomas de Fracturas:</b><br>" +
+                "&#8226; Deformidad.<br> " +
+                "&#8226; Inflamación.<br> " +
+                "&#8226; Incapacidad de movimiento.<br> " +
+                "&#8226; Aumento o acortamiento del miembro.<br>" +
+                "&#8226; Área lesionada  entumecida y fría.<br> " +
+                "&#8226; La piel tiene un color Azul." +
+                "<br><br><b>Primeros auxilios para fracturas</b>"+
+                "<br><br>Los huesos y articulaciones fracturadas o lesionadas deben ser inmovilizados  para que de esta forma puedan prevenir mayores lesiones y disminuir  el dolor." +
+                "<br><br><b>En la atención de estas lesiones se utilizan:</b> férulas, vendas de rollo y vendas triangulares.";
+
+        String contenidoFractura2="<br><br><b><h2></h2></b>"
+                +"<br>Un entablillado puede ser preparado comercialmente o improvisado. También  es posible utilizar una parte del cuerpo que no se encuentre lesionada, por  ejemplo: La otra pierna o el costado del cuerpo." +
+                "<br><br><b>¿Qué hacer?</b>" +
+                "<br>&#8226; No haga nada que le cause más dolor a la persona.<br>" +
+                "&#8226; Inmovilice el área lesionada en posición de mayor comodidad.<br>" +
+                "&#8226; Examine la circulación distal antes y después de la inmovilización.<br>" +
+                "&#8226; Tranquilizar a la persona afectada.<br>" +
+                "&#8226; Visualizar la fractura y estabilizar manualmente.<br>" +
+                "&#8226; Seleccionar el material de inmovilización adecuado.<br>";
+
+        ArrayList<Respuestas>  respuestaHeridas = new ArrayList<Respuestas>();
+        respuestaHeridas.add(new Respuestas("Perdida de visión", false));
+        respuestaHeridas.add(new Respuestas("Dolor intenso en el área afectada", true));
+        respuestaHeridas.add(new Respuestas("Pérdida de audición", false));
+
+
+        Preguntas preguntaHerida = new Preguntas("Síntomas de una fractura", respuestaHeridas);
+
+        ArrayList<AtencionesEmergencias>  fracHeridaHemo = new ArrayList<AtencionesEmergencias>();
+        fracHeridaHemo.add(new AtencionesEmergencias(R.drawable.heridas1info,herida1, "Heridas", preguntaHerida));
+        fracHeridaHemo.add(new AtencionesEmergencias(R.drawable.heridas2info,hemorragea1, "Hemorragia", preguntaHerida));
+        fracHeridaHemo.add(new AtencionesEmergencias(R.drawable.heridas2info,contenidoFractura1, "Fracturas", preguntaHerida));
+        fracHeridaHemo.add(new AtencionesEmergencias(R.drawable.heridas2info,contenidoFractura2, "Inmovilización", preguntaHerida));
+
+
+
+
+
+        //---------------------------------------Transporte y camillaje----------------------------------------------------------
+
+
+
+        String contenidoTransporte1="<br><br><b>Objetivos generales</b>" +
+                "<br><br>&#8226; El objetivo es evitar que las lesiones existentes empeoren o que con su accionar se originen otras nuevas." +
+                "<br>&#8226; Para lograr este objetivo, es necesario garantizar un adecuado transporte desde el área de impacto a un lugar seguro para su evaluación y estabilización; utilizar diferentes elementos como gasa, pañuelos, telas, sillas, camillas, tablas, etc. los que permiten vendar e inmovilizar las distintas lesiones encontradas." +
+                "<br><br><b>Considera estos tres aspectos.</b>" +
+                "<br>&#8226; Vendajes." +
+                "<br>&#8226; Inmovilización." +
+                "<br>&#8226; Traslado de Pacientes.";
+
+        String contenidoTransporte2="<br><br>&#8226; Los vendajes son procedimientos que tienen como objetivo cubrir con una venda, una zona lesionada" +
+                "<br>&#8226; Venda: Es una porción de gasa, tela o cualquier otro material que pueda utilizarse para los fines antes mencionados; por lo general, las vendas son de dos tipos : Las triangulares y enrolladas." +
+                "<br><br><b>Tipos de Vendajes</b>" +
+                "<br><b>Vendaje en espiral: </b>Se emplea una venda elástica o semielástica porque se puede adaptar a la zona que se va a vendar, se utiliza para sujetar gasas, apósitos o férulas en brazos, mano, muslo y piernas." +
+                "<br><b>Método: </b>Seleccione el tamaño adecuado, inicie el vendaje desde la parte más distal en dirección a la circulación  venosa, las vueltas de la venda ascienden en espiral, de tal manera, que cada vuelta cubra dos tercios de la vuelta anterior, luego fije la punta con un nudo, esparadrapo o un gancho." +
+                "<br><br><b>Vendaje en ocho: </b>Esta técnica se aplica en las articulaciones (tobillos, rodilla, codo, etc.). Útil para sujetar apósitos ( utilizados para control de hemorragias)  e inmovilizar." +
+                "<br><b>Método: </b>Dé una vuelta circular al inicio, seguida de un cruce de la venda en forma de ocho, puede terminar con otra vuelta" +
+                "";
+
+
+
+
+
+
+        ArrayList<Respuestas>  respuestasTransporte = new ArrayList<Respuestas>();
+        respuestasTransporte.add(new Respuestas("Perdida de visión", false));
+        respuestasTransporte.add(new Respuestas("Dolor intenso en el área afectada", true));
+        respuestasTransporte.add(new Respuestas("Pérdida de audición", false));
+
+
+        Preguntas preguntaTransporte = new Preguntas("Síntomas de una fractura", respuestaHeridas);
+
+        ArrayList<AtencionesEmergencias>  transporte = new ArrayList<AtencionesEmergencias>();
+        transporte.add(new AtencionesEmergencias(R.drawable.imgtransporte1,contenidoTransporte1, "Transporte y camillaje", preguntaTransporte));
+        transporte.add(new AtencionesEmergencias(R.drawable.imgvendaje1,contenidoTransporte2, "Vendajes", preguntaTransporte));
+
+
+
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------
 
         primerosAuxilios.add(new PrimerosAuxilios("Buscando que las comunidades sean más resilientes a los choques, factores de estrés y desastres.","Resiliencia Comunitaria", R.drawable.resilecinaicon, resiliencia));
         primerosAuxilios.add(new PrimerosAuxilios("¿Cómo debes actuar durante una emergencia?", "Primeros Auxilios Psicológicos ", R.drawable.inmo_icon, ayudaPsicologica));
-        primerosAuxilios.add(new PrimerosAuxilios("Sistema de clasificación de víctimas","Triages", R.drawable.triageicon, triages));
+        primerosAuxilios.add(new PrimerosAuxilios("Sistema de clasificación de víctimas.","Triajes", R.drawable.triageicon, triages));
+        primerosAuxilios.add(new PrimerosAuxilios("Primeros auxilios básicos","Atención de Heridas, Hemorragias y fracturas.", R.drawable.fracturalist, fracHeridaHemo));
+        primerosAuxilios.add(new PrimerosAuxilios("¿Cómo transportar personas lesionadas?","Transporte y camillaje.", R.drawable.fracturalist, transporte));
 
-
-
-
-        primerosAuxilios.add(new PrimerosAuxilios("¿Qué puedes hacer al momento de una fractura?","Atención de Fracturas", R.drawable.fracturalist, fractura));
-        primerosAuxilios.add(new PrimerosAuxilios("¿Qué puedes hacer al momento de una hemorragia?", "Atención Hemorrágias", R.drawable.hemorragialist, hemorrageas));
-        primerosAuxilios.add(new PrimerosAuxilios("¿Qué puedes hacer al momento de sufrir una herida?", "Atención de Heridas", R.drawable.heridas_icon, heridas));
 
         primerosAuxilios.add(new PrimerosAuxilios("¿Cómo debes actuar durante una emergencia?", "Sistema de Manejo de Emergencias", R.drawable.manejo, comandosEmergencias));
     }
