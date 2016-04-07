@@ -601,7 +601,13 @@ public class TwoFragment extends Fragment {
                 "<br><b>Método: </b>Seleccione el tamaño adecuado, inicie el vendaje desde la parte más distal en dirección a la circulación  venosa, las vueltas de la venda ascienden en espiral, de tal manera, que cada vuelta cubra dos tercios de la vuelta anterior, luego fije la punta con un nudo, esparadrapo o un gancho." +
                 "<br><br><b>Vendaje en ocho: </b>Esta técnica se aplica en las articulaciones (tobillos, rodilla, codo, etc.). Útil para sujetar apósitos ( utilizados para control de hemorragias)  e inmovilizar." +
                 "<br><b>Método: </b>Dé una vuelta circular al inicio, seguida de un cruce de la venda en forma de ocho, puede terminar con otra vuelta" +
-                "";
+                "<br><br><b>Vendaje de la mano: </b>Puede realizarse en forma oblicua desde la palma de la mano hacia la muñeca y luego terminar cubriendo los dedos o dejándolos libres e incluyendo el pulgar." +
+                "<br><br><b>Vendaje de los dedos: </b>Cuando se quiere vendar un dedo es conveniente dejar libre su extremidad para poder vigilar la circulación. Se comenzará en la muñeca, haciendo 3 ó 4 vueltas alrededor del dedo vendado" +
+                "<br><br><b>Vendaje de cabestrillo: </b>Con una venda, se mide el largo adecuado, se amarra en sus puntas y se coloca pasando por debajo del antebrazo para sostenerlo e inmovilizarlo en el movimiento de abajo y arriba, el otro extremo se fija sobre la nuca (el brazo debe estar de forma tal que la mano esté " +
+                "un poco más alta que el codo) tiene como inconveniente que no inmoviliza completamente el miembro superior, aunque podemos limitar más el movimiento si pasamos otra venda o pañuelo en forma trasversal sobre la parte media del tórax." +
+                "<br><br><b>Vendaje de la cabeza: </b>Para ello lo más utilizado es el vendaje de capelina, primero se hacen dos circulares " +
+                "alrededor de la cabeza, al llegar a la región occipital, se hace un inverso en ángulo recto que llevará la venda a la frente donde se hace otro inverso, esta maniobra se " +
+                "repite hasta cubrir totalmente la cabeza, luego se repite el vendaje circular para fijar los extremos de las vueltas del frente a la parte posterior.";
 
 
 
