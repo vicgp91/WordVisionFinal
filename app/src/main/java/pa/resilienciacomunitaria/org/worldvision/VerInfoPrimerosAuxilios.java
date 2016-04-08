@@ -3,6 +3,7 @@ package pa.resilienciacomunitaria.org.worldvision;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -43,10 +46,15 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
     private ImageView imageViewExpand;
     private static final int DURATION = 250;
     private Toolbar toolbar;
+    String htmlText = "<html>" + "<HEAD>\n" +
+            " <meta name=\"tipo_contenido\"  content=\"text/html;\" http-equiv=\"content-type\" charset=\"utf-8\">\n" +
+            "</HEAD>"+
+            "<body style=\"text-align:justify\" text=\"#737373\" style=\"font-size:19px;\"> %s </body></Html>";
     private RadioGroup rdgGrupo;
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
+    WebView webView;
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -54,6 +62,7 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
     public TextView nombre; //siguiente, anterior;
 
     Button siguiente, anterior;
+
 
     public TextView visitas;
     private Toolbar toolbarCard;
@@ -117,8 +126,14 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         imagen=(ImageView)findViewById(R.id.imagen);
 
 
-        nombre.setText(Html.fromHtml(listEmergencia.get(0).getDescripcion()));
-        nombre.setMovementMethod(LinkMovementMethod.getInstance());
+        /*nombre.setText(Html.fromHtml(listEmergencia.get(0).getDescripcion()));
+        nombre.setMovementMethod(LinkMovementMethod.getInstance());*/
+
+        webView=null;
+        webView = (WebView) findViewById(R.id.webView1);
+        webView.loadData(String.format(htmlText, listEmergencia.get(0).getDescripcion()), "text/html", "utf-8");
+
+
         toolbarCard.setTitle(listEmergencia.get(0).getTitulo());
         imagen.setImageResource(listEmergencia.get(0).getImagen());
         toolbarCard.setSubtitle("Parte 1/" + String.valueOf(listEmergencia.size()));
@@ -199,8 +214,18 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
             //nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
 
-            nombre.setText(Html.fromHtml(listEmergencia.get(posicionPagina - 1).getDescripcion()));
-            nombre.setMovementMethod(LinkMovementMethod.getInstance());
+            /*nombre.setText(Html.fromHtml(listEmergencia.get(posicionPagina - 1).getDescripcion()));
+            nombre.setMovementMethod(LinkMovementMethod.getInstance());*/
+
+
+
+
+
+            webView=null;
+
+            webView = (WebView) findViewById(R.id.webView1);
+            webView.loadData(String.format(htmlText, listEmergencia.get(posicionPagina - 1).getDescripcion()), "text/html", "utf-8");
+            webView.reload();
 
             imagen.setImageResource(listEmergencia.get(posicionPagina - 1).getImagen());
             toolbarCard.setTitle(listEmergencia.get(posicionPagina - 1).getTitulo());
@@ -287,8 +312,18 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
             if (posicionPagina>0){
                 //nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
-                nombre.setText(Html.fromHtml(listEmergencia.get(posicionPagina - 1).getDescripcion()));
-                nombre.setMovementMethod(LinkMovementMethod.getInstance());
+
+                /*nombre.setText(Html.fromHtml(listEmergencia.get(posicionPagina - 1).getDescripcion()));
+                nombre.setMovementMethod(LinkMovementMethod.getInstance());*/
+
+
+
+                webView=null;
+                webView = (WebView) findViewById(R.id.webView1);
+                webView.loadData(String.format(htmlText, listEmergencia.get(posicionPagina - 1).getDescripcion()), "text/html", "utf-8");
+                webView.reload();
+
+
                 imagen.setImageResource(listEmergencia.get(posicionPagina - 1).getImagen());
                 toolbarCard.setTitle(listEmergencia.get(posicionPagina - 1).getTitulo());
                 toolbarCard.setSubtitle("Parte " + String.valueOf(posicionPagina) + "/" + String.valueOf(listEmergencia.size()));
