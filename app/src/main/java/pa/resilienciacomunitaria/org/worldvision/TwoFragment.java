@@ -114,9 +114,9 @@ public class TwoFragment extends Fragment {
 
                 "<br><br><b><h2>&iquest;Cu&aacutendo se aplica la Resiliencia Comunitaria?</h2></b>" +
                 "<br><b>Antes: </b>" +
-                "<br>Para evitar el impacto, el estr&eacutes o el desastre completo (prevenci&oacuten o “resiliencia”)." +
+                "<br>Para evitar el impacto, el estr&eacutes o el desastre completo (prevenci&oacuten o resiliencia)." +
                 "<br><br><b>Durante: </b>" +
-                "<br>Para resistir a el efecto de un impacto, estr&eacutes o desastre (absorci&oacuten o “repuesta adaptiva)." +
+                "<br>Para resistir a el efecto de un impacto, estr&eacutes o desastre (absorci&oacuten o repuesta adaptiva)." +
                 "<br><br><b>Despu&eacutes: </b>" +
                 "<br>Para recuperar r&aacutepidamente de un impacto, un factor de estr&eacutes o desastre (la habilidad de recuperarse o repeler).<br><br><hr>";
 
@@ -367,7 +367,7 @@ public class TwoFragment extends Fragment {
                 "Haz que cada miembro del equipo exponga sus habilidades y experiencias, luego: <br>" +
                 "&#8226; Elija la posici&oacuten de ICS para la que est&eacuten m&aacutes calificados.<br>" +
                 "&#8226; Cada persona del equipo debe cubrir al menos una posici&oacuten de ICS.<br>" +
-                "&#8226; Una vez hallas elegido a una persona para cubrir cada rol, haz que pongan frente a ellos “el identificador de posiciones ICS”" +
+                "&#8226; Una vez hallas elegido a una persona para cubrir cada rol, haz que pongan frente a ellos el identificador de posiciones ICS" +
 
                 "<br><br><b>Descripci&oacuten de las funciones: comando de incidentes</b><br>" +
                 "&#8226; Establece objetivos, estrategias y prioridades en el incidente.<br>" +
@@ -375,12 +375,12 @@ public class TwoFragment extends Fragment {
 
                 "<br><br><b>Operaciones</b><br>" +
                 "&#8226; Define t&aacutecticas y recursos para alcanzar los objetivos.<br>" +
-                "&#8226; Dirige la respuesta t&aacutectica “alimentaci&oacuten”, atenci&oacuten m&eacutedica, remoci&oacuten de escombros, etc.<br>" +
+                "&#8226; Dirige la respuesta t&aacutectica alimentaci&oacuten, atenci&oacuten m&eacutedica, remoci&oacuten de escombros, etc.<br>" +
 
                 "<br><br><b>Planificaci&oacuten</b><br>" +
                 "&#8226; Recolecta, analiza y eval&uacutea informaci&oacuten.<br>" +
                 "&#8226; Gestiona recursos, decide las necesidades para la alimentaci&oacuten y distribuci&oacuten masiva.<br>" +
-                "&#8226; Mantiene la documentaci&oacuten “registro”." +
+                "&#8226; Mantiene la documentaci&oacuten registro." +
 
                 "<br><br><b>Log&iacutestica</b><br>" +
                 "&#8226; Provee recursos y servicios necesarios (PODS).<br>" +
@@ -437,7 +437,7 @@ public class TwoFragment extends Fragment {
                 "<br><br><b>Criterios para colocar la tarjeta con la clasificaci&oacuten Amarilla: </b>" +
                 "<br>&#8226; Heridas grandes no hemorr&aacutegicas. " +
                 "<br>&#8226; Heridas articulares profundas." +
-                "<br>&#8226; Quemaduras de 2° y 3° entre el 10% y 30%." +
+                "<br>&#8226; Quemaduras de 2&ordm; y 3&ordm; entre el 10% y 30%." +
                 "<br>&#8226; Alergias con manifestaciones cut&aacuteneas." +
                 "<br>&#8226; Fractura de huesos largos cerradas y huesos cortos abierta." +
                 "<br>&#8226; Luxaciones de gran articulaci&oacuten sin compromiso." +
@@ -450,7 +450,7 @@ public class TwoFragment extends Fragment {
                 "<br>&#8226; No camina." +
                 "<br>&#8226; Inconsciente." +
                 "<br>&#8226; Heridas grandes hemorr&aacutegicas." +
-                "<br>&#8226; Quemaduras de 2° y 3° entre el 31% y 50% en cara y mano." +
+                "<br>&#8226; Quemaduras de 2&ordm; y 3&ordm; entre el 31% y 50% en cara y mano." +
                 "<br>&#8226; Fractura de huesos largos abiertas." +
                 "<br>&#8226; Luxaciones de grandes articulaciones con compromiso." +
                 "<br>&#8226; Lesiones en los ojos graves penetrantes." +
@@ -658,7 +658,7 @@ public class TwoFragment extends Fragment {
                 "<br><br><b>T&eacutecnicas Empleadas: </b>" +
                 "<br>&#8226; Traslado sin medios." +
                 "<br>&#8226; Arrastre." +
-                "<br>&#8226; Soporte o “muleta humana”." +
+                "<br>&#8226; Soporte o muleta humana." +
                 "<br>&#8226; Cargue en brazos." +
                 "<br>&#8226; Cargue de bombero." +
                 "<br>&#8226; Silla de dos y de cuatro manos." +
@@ -783,7 +783,7 @@ public class TwoFragment extends Fragment {
                 "<br>Observar todo en 10 segundos y llegar a cualquier zona en 20." +
                 "<br><br><b>4.  Presteza: </b>" +
                 "<br>Se define como la necesidad de reducir el tiempo de rescate. <br>No pensando en precipitaci&oacuten, nerviosismo o realizando las cosas sin pensar sino a la prontitud y brevedad en nuestras acciones, ejecut&aacutendolas siempre correcta y eficazmente, con habilidad y sin el menor riesgo para aquellas personas a las que se rescata." +
-                "<br><br>5. Diagn&oacutestico y Actuaci&oacuten</b>" +
+                "<br><br><b>5. Diagn&oacutestico y Actuaci&oacuten</b>" +
                 "<br>&#8226; Diagn&oacutestico: Valorar la situaci&oacuten correctamente y tomar la decisi&oacuten. En el caso de una atenci&oacuten primaria, valorar el estado de la v&iacutectima y establecer el diagn&oacutestico descubriendo la causa del accidente." +
                 "<br>&#8226; Actuaci&oacuten: Efectuar las t&eacutecnicas de remolque y extracci&oacuten del accidentado decididas. En su caso realizar las t&eacutecnicas de primeros auxilios necesarias.<br><br><hr>";
 
