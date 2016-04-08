@@ -26,18 +26,12 @@
             android:label="@string/title_activity_ver_primeros_auxilios"
             android:parentActivityName="pa.resilienciacomunitaria.org.worldvision.MainActivity"
             android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.v4.PARENT_ACTIVITY"
-                android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
         <activity
             android:screenOrientation="portrait"
             android:name="pa.resilienciacomunitaria.org.worldvision.VerInfoPrimerosAuxilios"
             android:label="@string/title_activity_ver_info_primeros_auxilios"
             android:parentActivityName="pa.resilienciacomunitaria.org.worldvision.MainActivity" >
-            <meta-data
-                android:name="android.support.v4.PARENT_ACTIVITY"
-                android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
         <activity
             android:name="pa.resilienciacomunitaria.org.worldvision.SplashScreenActivity"
@@ -54,14 +48,8 @@
             android:name="pa.resilienciacomunitaria.org.worldvision.InscribiseActivity"
             android:label="@string/title_activity_inscribise"
             android:parentActivityName="pa.resilienciacomunitaria.org.worldvision.MainActivity" >
-            <meta-data
-                android:name="android.support.v4.PARENT_ACTIVITY"
-                android:value="pa.resilienciacomunitaria.org.wordvision.ThreeFragment" />
         </activity>
-
         <service android:name="pa.resilienciacomunitaria.org.worldvision.GuardarParticipantesService">
-
-
         </service>
 
 

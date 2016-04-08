@@ -66,6 +66,19 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+        if (toolbar != null) {
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
+
+
         ArrayList<AtencionesEmergencias> itemsPrimerosAuxilios = new ArrayList<AtencionesEmergencias>();
         // Obtener el Recycler
         // recycler = (RecyclerView) findViewById(R.id.reciclador);
