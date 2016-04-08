@@ -1,7 +1,9 @@
 package pa.resilienciacomunitaria.org.worldvision;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -33,6 +35,7 @@ import java.util.ArrayList;
 public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
     private TextView titulo, contenido;
+
     private ImageView imagen;
     private ListView lvImagenes;
     private ViewGroup linearLayoutDetails;
@@ -51,6 +54,7 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
     public TextView nombre; //siguiente, anterior;
 
     Button siguiente, anterior;
+
     public TextView visitas;
     private Toolbar toolbarCard;
     private ArrayList<AtencionesEmergencias> listEmergencia;
@@ -161,6 +165,8 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
 
     public void NextPage(View v) {
+        Vibrator vibr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibr.vibrate(100);
 
         final  Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.prueba);
@@ -218,6 +224,8 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                     if (rd1.isChecked()) {
                         if (listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta) {
                             MostrarMensaje("Muy bien, vamos al siguiente tema", true);
+                            dialog.dismiss();
+
                         }
                         if (!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(0).esCorrecta) {
                             MostrarMensaje("Inténtalo una vez más, tu puedes!\n", false);
@@ -226,6 +234,8 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                     } else if (rd2.isChecked()) {
                         if (listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta) {
                             MostrarMensaje("Muy bien, vamos al siguiente tema", true);
+                            dialog.dismiss();
+
                         }
                         if (!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(1).esCorrecta) {
                             MostrarMensaje("Inténtalo una vez más, tu puedes!\n", false);
@@ -234,6 +244,10 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
                     } else if (rd3.isChecked()) {
                         if (listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta) {
                             MostrarMensaje("Muy bien, vamos al siguiente tema", true);
+                            dialog.dismiss();
+
+
+
                         }
                         if (!listEmergencia.get(0).getPreguntas().getRespuestasArrayList().get(2).esCorrecta) {
                             MostrarMensaje("Inténtalo una vez más, tu puedes!\n", false);
@@ -259,6 +273,8 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
 
     public void BackPage(View view){
+        Vibrator vibr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibr.vibrate(100);
 
 
         if (posicionPagina > 0) {
@@ -296,10 +312,11 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
         if(esCorrcta!=null){
             if(esCorrcta){
                 img.setImageResource(R.drawable.correcta);
-                Intent i = new Intent(this,MainActivity.class);
-                startActivity(i);
-                /*Intent intent = new Intent(this, TwoFragment.class);
-                startActivity(intent);*/
+               // Intent i = new Intent(this,MainActivity.class);
+               // startActivity(i);
+
+
+                onBackPressed();
 
 
             }else{
