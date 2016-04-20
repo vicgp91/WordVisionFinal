@@ -210,6 +210,7 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
 
             if (posicionPagina == listEmergencia.size()) {
                 siguiente.setText("Quiz!");
+                siguiente.setVisibility(v.INVISIBLE);
             }
 
             //nombre.setText(listEmergencia.get(posicionPagina - 1).getDescripcion());
@@ -307,6 +308,7 @@ public class VerInfoPrimerosAuxilios extends AppCompatActivity {
             posicionPagina = posicionPagina - 1;
 
             if (posicionPagina < listEmergencia.size()) {
+                siguiente.setVisibility(view.VISIBLE);
                 siguiente.setText("Siguiente");
             }
 
